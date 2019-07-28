@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
         
-        <title>Beu | Dashboard</title>
+        <title>IEG | Dashboard</title>
         <meta name="description" content="Latest updates and statistic charts"> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
 				<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -65,8 +65,8 @@
 <div class="m-stack__item m-brand  m-brand--skin-dark ">
 	<div class="m-stack m-stack--ver m-stack--general">
 		<div class="m-stack__item m-stack__item--middle m-brand__logo">
-			<a href="index.html" class="m-brand__logo-wrapper">
-			<img alt="" src="{{asset('admin/assets/demo/default/media/img/logo/logo_default_dark.png')}}"/>
+			<a href="{{route('admin')}}" class="m-brand__logo-wrapper">
+			IEG
 			</a>  
 		</div>
 		<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -331,7 +331,7 @@
 		<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
 			<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
 				<span class="m-footer__copyright">
-					2019 &copy;Theme by <a href="" class="m-link">Bêu themes</a>
+					2019 &copy;Theme by <a href="" class="m-link">HTK themes</a>
 				</span>
 			</div>
 
