@@ -54,6 +54,7 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group">
                                 <label for="slug" class="col-md-12 control-label">Slug danh mục</label>
 
@@ -71,12 +72,37 @@
 
                               </select>
                           </div>
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-4 control-label">Mô tả</label>
+
+                            <div class="form-group col-md-12">
+                                <label for="thumbnail" class="col-md-5 control-label">Ảnh đại diện(Có thê rỗng)</label>
+                                <span class="form-group-btn">
+                                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
+                                    <i class="fa fa-picture-o"></i> Chọn
+                                  </a>
+                                </span>
+                                <input id="thumbnail" class="form-control col-md-12" type="text" name="thumbnail" value="{{$data->image}}">
+                                <img id="holder" style="margin-top:15px;max-height:100px;" src="{{ asset($data->image)}}">
+                            </div>
+
+                            <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
+                                <label for="keywords" class="col-md-4 control-label">SEO Keywords(Có thê rỗng)</label>
 
                                 <div class="col-md-12">
-                                    <input id="description" type="text" class="form-control" name="description" value="{{ $data->description }}"
-                                           required autofocus>
+                                    <textarea id="keywords" rows="7" name="keywords" class="form-control">{{$data->keywords}}</textarea>
+
+                                    @if ($errors->has('keywords'))
+                                        <span class="help-block">
+                                    <strong>{{ $errors->first('keywords') }}</strong>
+                                </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                                <label for="description" class="col-md-4 control-label">SEO Description(Có thê rỗng)</label>
+
+                                <div class="col-md-12">
+                                    <textarea id="description" rows="7" name="description" class="form-control">{{$data->description}}</textarea>
 
                                     @if ($errors->has('description'))
                                         <span class="help-block">
@@ -104,11 +130,11 @@
               </div>
     </div>
 
-    <!-- <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script> -->
+   <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
 
  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script type="text/javascript">
-
+    $('#lfm').filemanager('image');
     function ChangeToSlug()
             {
                 var title, slug;

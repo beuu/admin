@@ -5,9 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Models\CategoryNew;
 use App\Models\News;
 use Illuminate\Http\Request;
-use Datatables;
+
 use App\Models\Slug;
 use App\Http\Controllers\Controller;
+use Datatables;
 
 class NewController extends Controller
 {
@@ -86,7 +87,10 @@ class NewController extends Controller
         $data->image = $request->thumbnail;
         $data->content = $request->body;
         $data->cid = $request->postcate_id;
-        $data->save();
+        $newsave = $data->save();
+        if(!$newsave){
+            Slug::findOrFail($slug->id)->delete();
+        }
         return redirect()->route('post.index')
             ->with('success','Tạo mới bài viết thành công');
     }
@@ -137,7 +141,7 @@ class NewController extends Controller
 
         $data->title = $request->title;
         $data->description = $request->description;
-        $data->thumbnail = $request->thumbnail;
+        $data->image = $request->thumbnail;
         $data->body = $request->body;
         $data->postcate_id = $request->postcate_id;
         $data->save();

@@ -52,16 +52,11 @@
                             </div>
                         </div>
 
+
                         <div class="form-group col-md-12">
-                            <label for="thumbnail" class="col-md-5 control-label">Thumbnail</label>
-                            <span class="form-group-btn">
-                                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                  </a>
-                                </span>
-                            <input id="thumbnail" class="form-control" type="text" name="thumbnail" value="">
+                            <img id="holder" style="margin-top:15px;max-height:100px;" src="">
                         </div>
-                        <img id="holder" style="margin-top:15px;max-height:100px;" src="">
+
 
                         <div class="form-group col-md-12">
                           <label for="">Danh mục cha</label>
@@ -86,12 +81,34 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Mô tả</label>
+
+                        <div class="form-group col-md-12">
+                            <label for="thumbnail" class="col-md-5 control-label">Thumbnail</label>
+                            <span class="form-group-btn">
+                                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
+                                    <i class="fa fa-picture-o"></i> Chọn
+                                  </a>
+                                </span>
+                            <input id="thumbnail" hidden class="form-control" type="text" name="thumbnail" value="">
+                        </div>
+                        <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
+                            <label for="keywords" class="col-md-4 control-label">SEO Keywords</label>
 
                             <div class="col-md-12">
-                                <input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}"
-                                       required autofocus>
+                                <textarea id="keywords" rows="7" name="keywords" class="form-control">{{ old('keywords') }}</textarea>
+
+                                @if ($errors->has('keywords'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('keywords') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                            <label for="description" class="col-md-4 control-label">SEO Description</label>
+
+                            <div class="col-md-12">
+                                <textarea id="description" rows="7" name="description" class="form-control">{{ old('description') }}</textarea>
 
                                 @if ($errors->has('description'))
                                     <span class="help-block">

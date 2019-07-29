@@ -94,6 +94,8 @@ class CategoryNewController extends Controller
         $data->title = $request->title;
         $data->pid = $request->parent_id;
         $data->slug_id = $slug->id;
+        $data->image = $request->thumbnail;
+        $data->keywords = $request->keywords;
         $data->description = $request->description;
         $newsave = $data->save();
         if(!$newsave){
@@ -147,7 +149,9 @@ class CategoryNewController extends Controller
 
 
         $data->title = $request->title;
-        $data->parent_id = $request->parent_id;
+        $data->pid = $request->parent_id;
+        $data->image = $request->thumbnail;
+        $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->save();
         $slug = Slug::find($data->slug_id);
