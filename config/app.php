@@ -184,6 +184,10 @@ return [
         //JS Route
         Tightenco\Ziggy\ZiggyServiceProvider::class,
 
+        //filemanager
+        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -238,6 +242,8 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
 
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+
+        'Image' => Intervention\Image\Facades\Image::class,
 
 
     ],
