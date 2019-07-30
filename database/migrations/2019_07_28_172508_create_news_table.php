@@ -19,8 +19,8 @@ class CreateNewsTable extends Migration
             $table->string('image')->nullable();
             $table->bigInteger('slug_id')->unsigned();
             $table->foreign('slug_id')->references('id')->on('slugs')->onDelete('cascade');
-            $table->bigInteger('cid')->unsigned();
-            $table->foreign('cid')->references('id')->on('category_news')->onDelete('cascade');
+            $table->bigInteger('cid')->nullable()->unsigned();
+            $table->foreign('cid')->references('id')->on('category_news');
             $table->string('keywords')->default('')->nullable();
             $table->string('mdescription')->default('')->nullable();
             $table->bigInteger('uid')->unsigned();
@@ -28,6 +28,7 @@ class CreateNewsTable extends Migration
             $table->text('description');
             $table->longText('content');
             $table->boolean('feature')->default(0);
+            $table->boolean('public')->default(1);
             $table->integer('viewcount')->default(0);
             $table->timestamps();
         });

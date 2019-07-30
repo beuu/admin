@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Models\CategoryNew;
 use App\Models\News;
 use Illuminate\Http\Request;
-
 use App\Models\Slug;
 use App\Http\Controllers\Controller;
-use Datatables;
+use Illuminate\Support\Facades\Auth;
+use DataTables;
 
 class NewController extends Controller
 {
@@ -72,7 +72,7 @@ class NewController extends Controller
             'title' => 'required',
             'slug' => 'required|unique:slugs',
             'description' => 'required',
-            'thumbnail'=>'required',
+            'image'=>'required',
             'body'=>'required',
             'postcate_id' => 'required'
         ]);
@@ -83,16 +83,25 @@ class NewController extends Controller
         $data = new News();
         $data->title = $request->title;
         $data->slug_id = $slug->id;
+        if($request->feature != NULL){
+            $data->feature = 1;
+        }
+        $data->keywords = $request->keywords;
+        $data->uid = Auth::id();
         $data->description = $request->description;
-        $data->image = $request->thumbnail;
+        $data->mdescription = $request->mdescription;
+        $data->image = $request->image;
         $data->content = $request->body;
         $data->cid = $request->postcate_id;
         $newsave = $data->save();
-        if(!$newsave){
+        if($newsave){
+            
+            return redirect()->route('post.index')
+            ->with('success','Tạo mới bài viết thành công');
+        }else{
             Slug::findOrFail($slug->id)->delete();
         }
-        return redirect()->route('post.index')
-            ->with('success','Tạo mới bài viết thành công');
+        
     }
 
     /**
@@ -114,7 +123,7 @@ class NewController extends Controller
      */
     public function edit($id)
     {
-        $data2 = News::find($id);
+        $data2 = News::findOrFail($id);
         $data = CategoryNew::all();
         return view('admin.post.edit',compact('data2','data'));
     }
@@ -140,14 +149,21 @@ class NewController extends Controller
 
 
         $data->title = $request->title;
+        $data->slug_id = $slug->id;
+        if($request->feature != NULL){
+            $data->feature = 1;
+        }
+        $data->keywords = $request->keywords;
+        $data->uid = Auth::id();
         $data->description = $request->description;
-        $data->image = $request->thumbnail;
-        $data->body = $request->body;
-        $data->postcate_id = $request->postcate_id;
+        $data->mdescription = $request->mdescription;
+        $data->image = $request->image;
+        $data->content = $request->body;
+        $data->cid = $request->postcate_id;
         $data->save();
         $slug = Slug::findOrFail($data->slug_id);
         $slug->slug = $request->slug;
-        $slug->type = 'post';
+        $slug->type = 'new';
         $slug->save();
         return redirect()->route('post.index')
             ->with('success','Sửa bài viết thành công');

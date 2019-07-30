@@ -52,16 +52,29 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-12">
-                              <label for="thumbnail" class="col-md-5 control-label">Thumbnail</label>
-                                <span class="form-group-btn">
-                                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
-                                    <i class="fa fa-picture-o"></i> Chọn
-                                  </a>
-                                </span>
-                                <input id="thumbnail" class="form-control" type="text" name="thumbnail" value="">
+                            <div class="form-group row"style="margin:0px">
+                                <div class="col-md-6" >
+                                <label for="image" class="control-label">Thumbnail</label><br>
+                                    <span class="form-group-btn">
+                                    <a id="lfm" data-input="image" data-preview="holder" class="btn btn-primary text-white">
+                                        <i class="fa fa-picture-o"></i> Chọn
+                                    </a>
+                                    </span>
+                                    <input id="image" class="form-control" type="text" name="image" value="{{ old('image') }}">
+                                    <img id="holder" style="margin-top:15px;max-height:100px;" src="">
+                                </div>
+                                <div class="col-md-6">
+                                <label for="image" class="control-label">Bài viết nổi bật</label><br>
+                                <!-- Default switch -->
+                                    <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitches" name="feature">
+                                    <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>
+                                    </div>
+                                    
+                                </div>
+                              
                               </div>
-                              <img id="holder" style="margin-top:15px;max-height:100px;" src="">
+                              
 
                             <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
                                 <label for="slug" class="col-md-12 control-label">Slug bài viết</label>
@@ -80,7 +93,6 @@
                             <div class="form-group col-md-12">
                               <label for="">Danh muc</label>
                               <select name="postcate_id" class="form-control">
-                                  <option value="0">Chọn</option>
                                   <?php categoryParent($data)?>
                               </select>
                           </div>
@@ -89,7 +101,7 @@
                               <label for="email" class="col-md-12 control-label">Mô tả ngắn</label>
 
                               <div class="col-md-12">
-                                            <textarea id="description" name="description" class="form-control my-editor">{{ old('description')}}</textarea>
+                                            <textarea rows="7" id="description" name="description" class="form-control">{{ old('description')}}</textarea>
                                   @if ($errors->has('description'))
                                       <span class="help-block">
                                       <strong>{{ $errors->first('description') }}</strong>
@@ -110,7 +122,35 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                            <h2>SEO</h2>
+                            </div>
 
+                            
+                            <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
+                              <label for="keywords" class="col-md-12 control-label">Meta Keywords</label>
+
+                              <div class="col-md-12">
+                                            <textarea rows="7" id="keywords" name="keywords" class="form-control">{{ old('keywords')}}</textarea>
+                                  @if ($errors->has('keywords'))
+                                      <span class="help-block">
+                                      <strong>{{ $errors->first('keywords') }}</strong>
+                                  </span>
+                                  @endif
+                              </div>
+                          </div>
+                          <div class="form-group{{ $errors->has('mdescription') ? ' has-error' : '' }}">
+                              <label for="mdescription" class="col-md-12 control-label">Meta Description</label>
+
+                              <div class="col-md-12">
+                                            <textarea rows="7" id="mdescription" name="mdescription" class="form-control">{{ old('mdescription')}}</textarea>
+                                  @if ($errors->has('mdescription'))
+                                      <span class="help-block">
+                                      <strong>{{ $errors->first('mdescription') }}</strong>
+                                  </span>
+                                  @endif
+                              </div>
+                          </div>
 
 
 

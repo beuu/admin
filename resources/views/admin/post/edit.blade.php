@@ -56,14 +56,14 @@
                             </div>
 
                             <div class="form-group col-md-12">
-                              <label for="thumbnail" class="col-md-5 control-label">Thumbnail</label>
+                              <label for="image" class="col-md-5 control-label">Thumbnail</label>
                                 <span class="form-group-btn">
-                                  <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary text-white">
+                                  <a id="lfm" data-input="image" data-preview="holder" class="btn btn-primary text-white">
                                     <i class="fa fa-picture-o"></i> Chọn
                                   </a>
                                 </span>
-                                <input id="thumbnail" class="form-control col-md-12" type="text" name="thumbnail" value="{{$data2->thumbnail}}">
-                                  <img id="holder" style="margin-top:15px;max-height:100px;" src="{{ asset($data2->thumbnail)}}">
+                                <input id="image" class="form-control col-md-12" type="text" name="image" value="{{$data2->image}}">
+                                  <img id="holder" style="margin-top:15px;max-height:100px;" src="{{ asset($data2->image)}}">
                               </div>
 
 
@@ -84,7 +84,6 @@
                             <div class="form-group col-md-12">
                               <label for="">Danh muc</label>
                               <select name="postcate_id" class="form-control">
-                                  <option value="0">Chọn</option>
                                   <?php categoryParent($data ,$parent = 0, $str="", $data2->postcate_id); ?>
                                   
                               </select>

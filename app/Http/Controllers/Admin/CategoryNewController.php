@@ -83,7 +83,6 @@ class CategoryNewController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'slug' => 'required|unique:slugs',
-            'description' => 'required',
         ]);
 
         $slug = new Slug;
