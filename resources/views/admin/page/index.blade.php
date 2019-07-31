@@ -16,7 +16,7 @@
                       <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
                                   <h3 class="m-portlet__head-text">
-                                        Trang Tĩnh
+                                        Trang
                                   </h3>
                             </div>
                       </div>
@@ -40,7 +40,7 @@
                                   <a href="{{ route('page.create') }}" class="btn btn-info m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
                                               <span>
                                                     <i class="la la-cart-plus"></i>
-                                                    <span>Tạo Mới Trang Tĩnh</span>
+                                                    <span>Tạo Mới Trang</span>
                                               </span>
                                         </a>					
                                         <div class="m-separator m-separator--dashed d-xl-none"></div>					

@@ -25,6 +25,12 @@ Route::group(['prefix' => 'quan-tri','middleware' => 'auth'], function() {
     Route::resource('postcate', 'Admin\CategoryNewController');
     //New
     Route::resource('post', 'Admin\NewController');
+    //New
+    Route::resource('event', 'Admin\EventController');
+    Route::resource('icate', 'Admin\IcateController');
+    //New
+    Route::resource('ipost', 'Admin\IpostController');
+    Route::resource('page', 'Admin\PageController');
 });
 Route::get('/', function () {
     return view('welcome');

@@ -86,6 +86,9 @@ class NewController extends Controller
         if($request->feature != NULL){
             $data->feature = 1;
         }
+        if($request->public != NULL){
+            $data->public = 1;
+        }
         $data->keywords = $request->keywords;
         $data->uid = Auth::id();
         $data->description = $request->description;
@@ -142,26 +145,28 @@ class NewController extends Controller
             'title' => 'required',
             'slug' => 'required|unique:slugs,slug,'.$data->slug_id ,
             'description' => 'required',
-            'thumbnail'=>'required',
-            'body'=>'required',
+            'image'=>'required',
+            'content'=>'required',
             'postcate_id' => 'required'
         ]);
 
-
+        $slug = Slug::findOrFail($data->slug_id);
         $data->title = $request->title;
         $data->slug_id = $slug->id;
         if($request->feature != NULL){
             $data->feature = 1;
+        }else{
+            $data->feature = 0;
         }
         $data->keywords = $request->keywords;
         $data->uid = Auth::id();
         $data->description = $request->description;
         $data->mdescription = $request->mdescription;
         $data->image = $request->image;
-        $data->content = $request->body;
+        $data->content = $request->content;
         $data->cid = $request->postcate_id;
         $data->save();
-        $slug = Slug::findOrFail($data->slug_id);
+        
         $slug->slug = $request->slug;
         $slug->type = 'new';
         $slug->save();

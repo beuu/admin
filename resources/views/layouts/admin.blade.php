@@ -331,6 +331,120 @@
 										</span>
                             </a>
                         </li>
+
+                    </ul>
+                </div>
+
+                </a>
+            </li>
+            {{--            endnew--}}
+
+
+			{{--            endevent--}}
+
+            <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="{{ route('event.index')}}" class="m-menu__link m-menu__toggle">
+                    <i class="m-menu__link-icon flaticon-layers"></i>
+                    <span class="m-menu__link-text">
+		Su kien
+	</span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                </a>
+                <div class="m-menu__submenu" style="">
+                    <span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+
+
+                        <li class="m-menu__item " aria-haspopup="true">
+                            <a href="{{ route('event.index')}}" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+											Danh Sách
+										</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                </a>
+            </li>
+            {{--            endevent--}}
+
+
+
+			{{--            endevent--}}
+
+            <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="{{ route('page.index')}}" class="m-menu__link m-menu__toggle">
+                    <i class="m-menu__link-icon flaticon-layers"></i>
+                    <span class="m-menu__link-text">
+		Trang
+	</span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                </a>
+                <div class="m-menu__submenu" style="">
+                    <span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+
+
+                        <li class="m-menu__item " aria-haspopup="true">
+                            <a href="{{ route('page.index')}}" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+											Danh Sách
+										</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                </a>
+            </li>
+            {{--            endevent--}}
+
+			{{--            new--}}
+
+            <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="{{ route('icate.index')}}" class="m-menu__link m-menu__toggle">
+                    <i class="m-menu__link-icon flaticon-layers"></i>
+                    <span class="m-menu__link-text">
+		IEG VÀ TÔI
+	</span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                </a>
+                <div class="m-menu__submenu" style="">
+                    <span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+
+
+                        <li class="m-menu__item " aria-haspopup="true">
+                            <a href="{{ route('ipost.index')}}" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+											Danh Sách
+										</span>
+                            </a>
+                        </li>
+
+                        <li class="m-menu__item " aria-haspopup="true">
+                            <a href="{{ route('icate.index')}}" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+											Danh Mục
+										</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -368,7 +482,7 @@
 
 				
 <!-- begin::Footer -->
-<footer class="m-grid__item		m-footer ">
+<!-- <footer class="m-grid__item		m-footer ">
 	<div class="m-container m-container--fluid m-container--full-height m-page__container">
 		<div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
 			<div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
@@ -379,7 +493,7 @@
 
 		</div>
 	</div>
-</footer>
+</footer> -->
 <!-- end::Footer -->		
 		
 

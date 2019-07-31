@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 30, 2019 lúc 09:38 PM
--- Phiên bản máy phục vụ: 10.1.37-MariaDB
--- Phiên bản PHP: 7.3.0
+-- Host: 127.0.0.1
+-- Generation Time: Jul 31, 2019 at 11:52 PM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ieg`
+-- Database: `ieg`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_news`
+-- Table structure for table `category_news`
 --
 
 CREATE TABLE `category_news` (
@@ -35,23 +35,111 @@ CREATE TABLE `category_news` (
   `slug_id` bigint(20) UNSIGNED NOT NULL,
   `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `pid` bigint(20) NOT NULL DEFAULT '0',
+  `pid` bigint(20) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_news`
+-- Dumping data for table `category_news`
 --
 
 INSERT INTO `category_news` (`id`, `title`, `image`, `slug_id`, `keywords`, `description`, `pid`, `created_at`, `updated_at`) VALUES
 (1, 'Highcharts Demo', NULL, 1, NULL, NULL, 0, '2019-07-30 11:08:05', '2019-07-30 11:08:05'),
-(2, 'Dễ đọc nhưng nội dung không hề dễ dãi', NULL, 2, NULL, NULL, 1, '2019-07-30 11:08:17', '2019-07-30 11:08:17');
+(2, 'Dễ đọc nhưng nội dung không hề dễ dãi', NULL, 2, NULL, NULL, 1, '2019-07-30 11:08:17', '2019-07-30 11:08:17'),
+(3, 'tin tuc', NULL, 15, NULL, NULL, 0, '2019-07-31 12:59:51', '2019-07-31 12:59:51'),
+(4, 'su kien', NULL, 16, NULL, NULL, 0, '2019-07-31 13:00:12', '2019-07-31 13:00:12'),
+(5, 'toi va ieg', NULL, 17, NULL, NULL, 0, '2019-07-31 13:00:32', '2019-07-31 13:00:32'),
+(6, 'tin tucdsf', NULL, 18, NULL, NULL, 0, '2019-07-31 13:03:37', '2019-07-31 13:03:37');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `events`
+--
+
+CREATE TABLE `events` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug_id` bigint(20) UNSIGNED NOT NULL,
+  `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `mdescription` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `uid` bigint(20) UNSIGNED NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `image`, `slug_id`, `keywords`, `mdescription`, `uid`, `description`, `content`, `created_at`, `updated_at`) VALUES
+(1, 'toi va iegsdfsdfsdf', '/photos/2/IMG_20190622_150250-01.jpeg', 20, NULL, NULL, 2, 'sdfsdf', '<p>dsfsdfsdfsdf</p>', '2019-07-31 13:54:14', '2019-07-31 13:54:14'),
+(3, 'su kiensdsd', '/photos/2/wallpaper_op2.jpg', 22, NULL, NULL, 2, 'sdsd', '<p>sdsdsd</p>', '2019-07-31 14:00:22', '2019-07-31 14:00:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ieg_me_cates`
+--
+
+CREATE TABLE `ieg_me_cates` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug_id` bigint(20) UNSIGNED NOT NULL,
+  `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `pid` bigint(20) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ieg_me_cates`
+--
+
+INSERT INTO `ieg_me_cates` (`id`, `title`, `image`, `slug_id`, `keywords`, `description`, `pid`, `created_at`, `updated_at`) VALUES
+(1, 'toi va iegdssdfsdfsdf', '/photos/2/wallpaper_op2.jpg', 23, NULL, NULL, 0, '2019-07-31 14:15:51', '2019-07-31 14:17:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ieg_me_posts`
+--
+
+CREATE TABLE `ieg_me_posts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug_id` bigint(20) UNSIGNED NOT NULL,
+  `cid` bigint(20) UNSIGNED DEFAULT NULL,
+  `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `mdescription` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `uid` bigint(20) UNSIGNED NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `feature` tinyint(1) NOT NULL DEFAULT 0,
+  `public` tinyint(1) NOT NULL DEFAULT 1,
+  `viewcount` int(11) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ieg_me_posts`
+--
+
+INSERT INTO `ieg_me_posts` (`id`, `title`, `image`, `slug_id`, `cid`, `keywords`, `mdescription`, `uid`, `description`, `content`, `feature`, `public`, `viewcount`, `created_at`, `updated_at`) VALUES
+(1, 'toi va ieg fsdfsdf sdfdsf', '/photos/2/wallpaper_op2.jpg', 24, 1, NULL, NULL, 2, 'dsfdsf', '<p>dsfdsf dsfdsfsdf</p>', 1, 1, 0, '2019-07-31 14:28:25', '2019-07-31 14:28:25');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -61,7 +149,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -70,12 +158,16 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_07_03_044644_entrust_setup_tables', 1),
 (8, '2019_07_28_171300_create_slugs_table', 2),
 (9, '2019_07_28_171944_create_category_news_table', 2),
-(13, '2019_07_28_172508_create_news_table', 3);
+(13, '2019_07_28_172508_create_news_table', 3),
+(14, '2019_07_31_203515_create_events_table', 4),
+(15, '2019_07_31_210427_create_ieg_me_cates_table', 5),
+(16, '2019_07_31_210546_create_ieg_me_posts_table', 5),
+(17, '2019_07_31_213025_create_pages_table', 6);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -89,28 +181,55 @@ CREATE TABLE `news` (
   `uid` bigint(20) UNSIGNED NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `feature` tinyint(1) NOT NULL DEFAULT '0',
-  `public` tinyint(1) NOT NULL DEFAULT '1',
-  `viewcount` int(11) NOT NULL DEFAULT '0',
+  `feature` tinyint(1) NOT NULL DEFAULT 0,
+  `public` tinyint(1) NOT NULL DEFAULT 1,
+  `viewcount` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `title`, `image`, `slug_id`, `cid`, `keywords`, `mdescription`, `uid`, `description`, `content`, `feature`, `public`, `viewcount`, `created_at`, `updated_at`) VALUES
-(2, 'Highcharts Demo gfhfgh', '/photos/2/IMG_20190622_150250-01.jpeg', 10, 1, NULL, '', 2, '<p>fgh hfghfg</p>', '<p>fghfgh gfhfg</p>', 0, 1, 0, '2019-07-30 11:31:34', '2019-07-30 11:31:34'),
+(2, 'Highcharts Demo gfhfgh', '/photos/2/IMG_20190622_150250-01.jpeg', 10, 1, 'werewr', 'ewrwer', 2, '<p>fgh hfghfg</p>', '<p>fghfgh gfhfg</p>', 1, 1, 0, '2019-07-30 11:31:34', '2019-07-31 13:28:32'),
 (3, 'Highcharts Demo asdasd', '/photos/2/IMG_20190622_150250-01.jpeg', 11, 1, NULL, '', 2, '<p>asdasd</p>', '<p>dfsdfsdfsd</p>', 0, 1, 0, '2019-07-30 11:48:20', '2019-07-30 11:48:20'),
 (4, 'Thất vọngsdfsdfsdfsdf sdfdsf3123123', '/photos/2/IMG_20190622_150250-01.jpeg', 12, 1, NULL, '', 2, '<p>dfgdf</p>', '<p>dfgdfgdf dfgdfgdfg</p>', 0, 1, 0, '2019-07-30 11:49:03', '2019-07-30 11:49:03'),
 (5, 'Dễ đọc nhưng nội dung không hề dễ dãi sdfsdfsdf 345345', '/photos/2/IMG_20190622_150250-01.jpeg', 13, 1, 'asdas', 'asdasd', 2, 'sdas', '<p>asdsa</p>', 0, 1, 0, '2019-07-30 12:34:00', '2019-07-30 12:34:00'),
-(6, 'Dễ đọc nhưng nội dung không hề dễ dãi sdfsdfsdfSFSDFSDFSDF', '/photos/2/IMG_20190622_150250-01.jpeg', 14, 1, 'asdas', 'sdasd', 2, 'asdasdas asdsa', '<p>sad asdasdas asdasd</p>', 1, 1, 0, '2019-07-30 12:35:11', '2019-07-30 12:35:11');
+(6, 'Dễ đọc nhưng nội dung không hề dễ dãi sdfsdfsdfSFSDFSDFSDF', '/photos/2/IMG_20190622_150250-01.jpeg', 14, 1, 'asdas', 'sdasd', 2, 'asdasdas asdsa', '<p>sad asdasdas asdasd</p>', 1, 1, 0, '2019-07-30 12:35:11', '2019-07-30 12:35:11'),
+(7, 'toi va ieg sdfsdfdsf', '/photos/2/IMG_20190622_150250-01.jpeg', 19, 1, NULL, NULL, 2, 'sdfsdfsdfsdf', '<p>sdfsdfdsf</p>', 0, 0, 0, '2019-07-31 13:05:46', '2019-07-31 14:45:04');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `slug_id` bigint(20) UNSIGNED NOT NULL,
+  `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `mdescription` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `uid` bigint(20) UNSIGNED NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `title`, `slug_id`, `keywords`, `mdescription`, `uid`, `description`, `content`, `created_at`, `updated_at`) VALUES
+(1, 'su kien sdfsdfds sdfsdfsdfds', 26, NULL, NULL, 2, 'dsfsdfds dsfdf', '<p>sdfdsfs dsfsdf</p>', '2019-07-31 14:43:23', '2019-07-31 14:43:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -122,7 +241,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `permissions`
+-- Table structure for table `permissions`
 --
 
 CREATE TABLE `permissions` (
@@ -135,7 +254,7 @@ CREATE TABLE `permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `permissions`
+-- Dumping data for table `permissions`
 --
 
 INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
@@ -155,7 +274,7 @@ INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `created
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `permission_role`
+-- Table structure for table `permission_role`
 --
 
 CREATE TABLE `permission_role` (
@@ -164,7 +283,7 @@ CREATE TABLE `permission_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `permission_role`
+-- Dumping data for table `permission_role`
 --
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
@@ -184,7 +303,7 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -197,7 +316,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
@@ -206,7 +325,7 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role_user`
+-- Table structure for table `role_user`
 --
 
 CREATE TABLE `role_user` (
@@ -215,7 +334,7 @@ CREATE TABLE `role_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role_user`
+-- Dumping data for table `role_user`
 --
 
 INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
@@ -224,7 +343,7 @@ INSERT INTO `role_user` (`user_id`, `role_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `slugs`
+-- Table structure for table `slugs`
 --
 
 CREATE TABLE `slugs` (
@@ -236,7 +355,7 @@ CREATE TABLE `slugs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `slugs`
+-- Dumping data for table `slugs`
 --
 
 INSERT INTO `slugs` (`id`, `slug`, `type`, `created_at`, `updated_at`) VALUES
@@ -250,12 +369,23 @@ INSERT INTO `slugs` (`id`, `slug`, `type`, `created_at`, `updated_at`) VALUES
 (11, 'highcharts-demo-asdasd', 'new', '2019-07-30 11:48:20', '2019-07-30 11:48:20'),
 (12, 'that-vongsdfsdfsdfsdf-sdfdsf3123123', 'new', '2019-07-30 11:49:03', '2019-07-30 11:49:03'),
 (13, 'de-doc-nhung-noi-dung-khong-he-de-dai-sdfsdfsdf-345345', 'new', '2019-07-30 12:34:00', '2019-07-30 12:34:00'),
-(14, 'de-doc-nhung-noi-dung-khong-he-de-dai-sdfsdfsdfsfsdfsdfsdf', 'new', '2019-07-30 12:35:11', '2019-07-30 12:35:11');
+(14, 'de-doc-nhung-noi-dung-khong-he-de-dai-sdfsdfsdfsfsdfsdfsdf', 'new', '2019-07-30 12:35:11', '2019-07-30 12:35:11'),
+(15, 'tin-tuc', 'postcate', '2019-07-31 12:59:51', '2019-07-31 12:59:51'),
+(16, 'su-kien', 'postcate', '2019-07-31 13:00:12', '2019-07-31 13:00:12'),
+(17, 'toi-va-ieg', 'postcate', '2019-07-31 13:00:32', '2019-07-31 13:00:32'),
+(18, 'tin-tucdsf', 'postcate', '2019-07-31 13:03:37', '2019-07-31 13:03:37'),
+(19, 'toi-va-ieg-sdfsdfdsf', 'new', '2019-07-31 13:05:46', '2019-07-31 13:05:46'),
+(20, 'toi-va-iegsdfsdfsdf', 'new', '2019-07-31 13:54:14', '2019-07-31 13:54:14'),
+(22, 'su-kiensdsd', 'new', '2019-07-31 14:00:22', '2019-07-31 14:00:22'),
+(23, 'toi-va-iegdssdfsdfsdf', 'icate', '2019-07-31 14:15:51', '2019-07-31 14:15:51'),
+(24, 'toi-va-ieg-fsdfsdf-sdfdsf', 'new', '2019-07-31 14:28:25', '2019-07-31 14:28:25'),
+(25, 'su-kien-sdfsdfds', 'page', '2019-07-31 14:42:54', '2019-07-31 14:42:54'),
+(26, 'su-kien-sdfsdfds-sdfsdfsdfds', 'page', '2019-07-31 14:43:23', '2019-07-31 14:43:23');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -270,31 +400,55 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'Admin User', 'tien2vv@gmail.com', NULL, '$2y$10$8ipDZJuzO5lKALO89e7JkebjEQ9/Hj/uzJ3kLH.NE9L53/VrRN0R.', NULL, '2019-07-28 10:04:49', '2019-07-28 10:04:49');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `category_news`
+-- Indexes for table `category_news`
 --
 ALTER TABLE `category_news`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_news_slug_id_foreign` (`slug_id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `events_slug_id_foreign` (`slug_id`),
+  ADD KEY `events_uid_foreign` (`uid`);
+
+--
+-- Indexes for table `ieg_me_cates`
+--
+ALTER TABLE `ieg_me_cates`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ieg_me_cates_slug_id_foreign` (`slug_id`);
+
+--
+-- Indexes for table `ieg_me_posts`
+--
+ALTER TABLE `ieg_me_posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ieg_me_posts_slug_id_foreign` (`slug_id`),
+  ADD KEY `ieg_me_posts_cid_foreign` (`cid`),
+  ADD KEY `ieg_me_posts_uid_foreign` (`uid`);
+
+--
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`),
@@ -303,111 +457,164 @@ ALTER TABLE `news`
   ADD KEY `news_uid_foreign` (`uid`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pages_slug_id_foreign` (`slug_id`),
+  ADD KEY `pages_uid_foreign` (`uid`);
+
+--
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `permissions`
+-- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `permissions_name_unique` (`name`);
 
 --
--- Chỉ mục cho bảng `permission_role`
+-- Indexes for table `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
   ADD KEY `permission_role_role_id_foreign` (`role_id`);
 
 --
--- Chỉ mục cho bảng `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
--- Chỉ mục cho bảng `role_user`
+-- Indexes for table `role_user`
 --
 ALTER TABLE `role_user`
   ADD PRIMARY KEY (`user_id`,`role_id`),
   ADD KEY `role_user_role_id_foreign` (`role_id`);
 
 --
--- Chỉ mục cho bảng `slugs`
+-- Indexes for table `slugs`
 --
 ALTER TABLE `slugs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `slugs_slug_unique` (`slug`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `category_news`
+-- AUTO_INCREMENT for table `category_news`
 --
 ALTER TABLE `category_news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT cho bảng `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT cho bảng `news`
---
-ALTER TABLE `news`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT cho bảng `permissions`
+-- AUTO_INCREMENT for table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `ieg_me_cates`
+--
+ALTER TABLE `ieg_me_cates`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `ieg_me_posts`
+--
+ALTER TABLE `ieg_me_posts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `slugs`
+-- AUTO_INCREMENT for table `slugs`
 --
 ALTER TABLE `slugs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `category_news`
+-- Constraints for table `category_news`
 --
 ALTER TABLE `category_news`
   ADD CONSTRAINT `category_news_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `news`
+-- Constraints for table `events`
+--
+ALTER TABLE `events`
+  ADD CONSTRAINT `events_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `events_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `ieg_me_cates`
+--
+ALTER TABLE `ieg_me_cates`
+  ADD CONSTRAINT `ieg_me_cates_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `ieg_me_posts`
+--
+ALTER TABLE `ieg_me_posts`
+  ADD CONSTRAINT `ieg_me_posts_cid_foreign` FOREIGN KEY (`cid`) REFERENCES `ieg_me_cates` (`id`),
+  ADD CONSTRAINT `ieg_me_posts_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `ieg_me_posts_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `news`
 --
 ALTER TABLE `news`
   ADD CONSTRAINT `news_cid_foreign` FOREIGN KEY (`cid`) REFERENCES `category_news` (`id`),
@@ -415,14 +622,21 @@ ALTER TABLE `news`
   ADD CONSTRAINT `news_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `users` (`id`);
 
 --
--- Các ràng buộc cho bảng `permission_role`
+-- Constraints for table `pages`
+--
+ALTER TABLE `pages`
+  ADD CONSTRAINT `pages_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `pages_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `permission_role`
 --
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `role_user`
+-- Constraints for table `role_user`
 --
 ALTER TABLE `role_user`
   ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

@@ -53,9 +53,7 @@
                         </div>
 
 
-                        <div class="form-group col-md-12">
-                            <img id="holder" style="margin-top:15px;max-height:100px;" src="">
-                        </div>
+                        
 
 
                         <div class="form-group col-md-12">
@@ -90,6 +88,9 @@
                                   </a>
                                 </span>
                             <input id="thumbnail" hidden class="form-control" type="text" name="thumbnail" value="">
+                            <div class="form-group col-md-12">
+                            <img id="holder" style="margin-top:15px;max-height:100px;" src="">
+                        </div>
                         </div>
                         <div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
                             <label for="keywords" class="col-md-4 control-label">SEO Keywords</label>
