@@ -64,11 +64,34 @@
                                     <img id="holder" style="margin-top:15px;max-height:100px;" src="">
                                 </div>
                                 <div class="col-md-6">
-                                <label for="image" class="control-label">Bài viết nổi bật</label><br>
-                                <!-- Default switch -->
-                                    <div class="custom-control custom-switch">
-                                    <input type="checkbox" class="custom-control-input" id="customSwitches" name="feature">
-                                    <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>
+{{--                                <label for="image" class="control-label">Bài viết nổi bật</label><br>--}}
+{{--                                <!-- Default switch -->--}}
+{{--                                    <div class="custom-control custom-switch">--}}
+{{--                                    <input type="checkbox" class="custom-control-input" id="customSwitches" name="feature">--}}
+{{--                                    <label class="custom-control-label" for="customSwitches">Toggle this switch element</label>--}}
+{{--                                    </div>--}}
+
+
+
+                                    <div class="m-form__group form-group row">
+                                        <label class="col-3 col-form-label">Bài viết nổi bật</label>
+                                        <div class="col-3">
+											<span class="m-switch m-switch--success">
+												<label>
+						                        <input type="checkbox" checked="checked" name="feature">
+						                        <span></span>
+						                        </label>
+						                    </span>
+                                        </div>
+                                        <label class="col-3 col-form-label">Public bài viết</label>
+                                        <div class="col-3">
+											<span class="m-switch m-switch--warning">
+												<label>
+						                        <input type="checkbox" checked="checked" name="public">
+						                        <span></span>
+						                        </label>
+						                    </span>
+                                        </div>
                                     </div>
                                     
                                 </div>
