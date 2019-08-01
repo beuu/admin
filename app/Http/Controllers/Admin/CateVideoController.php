@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\CateVideo;
-use App\Models\Video;
-use App\Models\Slug;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Slug;
+use App\Models\CateVideo;
 use DataTables;
 
-class VideoController extends Controller
+class CateVideoController extends Controller
 {
     //    public function __construct()
 //    {
-//        $this->middleware('permission:post_list', ['only' => ['index']]);
-//        $this->middleware('permission:post_create', ['only' => ['create', 'store']]);
-//        $this->middleware('permission:post_edit', ['only' => ['edit', 'update']]);
-//        $this->middleware('permission:post_delete', ['only' => ['delete']]);
-//        $this->middleware('permission:post_view', ['only' => ['show']]);
+//        $this->middleware('permission:cpost_list', ['only' => ['index']]);
+//        $this->middleware('permission:cpost_create', ['only' => ['create', 'store']]);
+//        $this->middleware('permission:cpost_edit', ['only' => ['edit', 'update']]);
+//        $this->middleware('permission:cpost_delete', ['only' => ['delete']]);
+//        $this->middleware('permission:cpost_view', ['only' => ['show']]);
 //
 //    }
     /**
@@ -29,12 +27,27 @@ class VideoController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = Video::latest()->get();
+            $data = CateVideo::latest()->get();
             return Datatables::of($data)
                 ->addIndexColumn()
+                ->addColumn('parent', function($row){
+
+                    $rolename = "";
+                    if(!empty($row->parent)){
+                        $rolename = $row->parent['title'];
+
+
+                    }else
+                    {
+                        $rolename = "None";
+                    }
+
+                    return $rolename;
+                })
+                ->rawColumns(['parent'])
                 ->addColumn('action', function($row){
 
-                    $btn = '<a  href="'.route('video.edit', $row->id).'" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
+                    $btn = '<a  href="'.route('cvideo.edit', $row->id).'" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill" title="View">
                         <i class="la la-edit"></i>
                       </a> <a  href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="m-portlet__nav-link btn m-btn m-btn--hover-brand m-btn--icon m-btn--icon-only m-btn--pill deleteUser" title="View">
                       <i class="la la-close"></i>
@@ -46,7 +59,7 @@ class VideoController extends Controller
 
                 ->make(true);
         }
-        return view('admin.video.index');
+        return view('admin.cvideo.index');
     }
 
     /**
@@ -55,9 +68,8 @@ class VideoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $data= CateVideo::all();
-        return view('admin.video.create',compact('data'));
+    {   $datas = CateVideo::all();
+        return view('admin.cvideo.create',compact('datas'));
     }
 
     /**
@@ -71,35 +83,25 @@ class VideoController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'slug' => 'required|unique:slugs',
-            'image'=>'required',
-            'link'=>'required',
-            'postcate_id' => 'required'
         ]);
+
         $slug = new Slug;
         $slug->slug = $request->slug;
-        $slug->type = 'video';
+        $slug->type = 'cvideo';
         $slug->save();
-        $data = new Video();
+        $data = new CateVideo();
         $data->title = $request->title;
+        $data->pid = $request->parent_id;
         $data->slug_id = $slug->id;
-        if($request->feature != NULL){
-            $data->feature = 1;
-        }
+        $data->image = $request->thumbnail;
         $data->keywords = $request->keywords;
-        $data->uid = Auth::id();
-        $data->mdescription = $request->mdescription;
-        $data->image = $request->image;
-        $data->link = $request->link;
-        $data->cid = $request->postcate_id;
+        $data->description = $request->description;
         $newsave = $data->save();
-        if($newsave){
-
-            return redirect()->route('video.index')
-                ->with('success','Tạo mới video thành công');
-        }else{
+        if(!$newsave){
             Slug::findOrFail($slug->id)->delete();
         }
-
+        return redirect()->route('cvideo.index')
+            ->with('success','Tọa mới danh mục thành công');
     }
 
     /**
@@ -110,7 +112,8 @@ class VideoController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = CateVideo::find($id);
+        return view('admin.cvideo.show',compact('data'));
     }
 
     /**
@@ -121,9 +124,10 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        $data2 = Video::findOrFail($id);
-        $data = CateVideo::all();
-        return view('admin.video.edit',compact('data2','data'));
+
+        $datas = CateVideo::all();
+        $data = CateVideo::find($id);
+        return view('admin.cvideo.edit',compact('data','datas'));
     }
 
     /**
@@ -135,36 +139,25 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Video::findOrFail($id);
+        $data = CateVideo::find($id);
         $this->validate($request, [
             'title' => 'required',
-            'slug' => 'required|unique:slugs,slug,'.$data->slug_id ,
-            'image'=>'required',
-            'link'=>'required',
-            'postcate_id' => 'required'
+            'slug' => 'required|unique:slugs,slug,'.$data->slug_id
         ]);
 
-        $slug = Slug::findOrFail($data->slug_id);
-        $data->title = $request->title;
-        $data->slug_id = $slug->id;
-        if($request->feature != NULL){
-            $data->feature = 1;
-        }else{
-            $data->feature = 0;
-        }
-        $data->keywords = $request->keywords;
-        $data->uid = Auth::id();
-        $data->mdescription = $request->mdescription;
-        $data->image = $request->image;
-        $data->link = $request->link;
-        $data->cid = $request->postcate_id;
-        $data->save();
 
+        $data->title = $request->title;
+        $data->pid = $request->parent_id;
+        $data->image = $request->thumbnail;
+        $data->keywords = $request->keywords;
+        $data->description = $request->description;
+        $data->save();
+        $slug = Slug::find($data->slug_id);
         $slug->slug = $request->slug;
-        $slug->type = 'video';
+        $slug->type = 'cvideo';
         $slug->save();
-        return redirect()->route('video.index')
-            ->with('success','Sửa video thành công');
+        return redirect()->route('cvideo.index')
+            ->with('success','Sửa danh mục thành công');
     }
 
     /**
@@ -175,10 +168,10 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        $data = Video::find($id);
+        $data = CateVideo::find($id);
         $data->delete();
-        Slug::findOrFail($data->slug_id)->delete();
-        return redirect()->route('video.index')
-            ->with('success','Xóa video thành công');
+        Slug::find($data->slug_id)->delete();
+        return redirect()->route('cvideo.index')
+            ->with('success','Xóa danh mục thành công');
     }
 }

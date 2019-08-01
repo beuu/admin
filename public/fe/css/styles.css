@@ -1216,6 +1216,27 @@ ul.content_left--list.mt_130_cust >li >ul {
     margin-bottom: 50px;
 }
 
+header .navbar-default .navbar-nav > .active > a {
+    position: relative;
+}
+header .navbar-default .navbar-nav > .active > a:after, header .navbar-default .navbar-nav > .active > a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header .navbar-default .navbar-nav > .active > a:before {
+    top: -20px;
+    background: #66b969;
+}
+header .navbar-default .navbar-nav > .active > a:after {
+    bottom: -20px;
+    background: #199cc7;
+}
+
 
 
 

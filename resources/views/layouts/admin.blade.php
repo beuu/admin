@@ -340,6 +340,52 @@
             {{--            endnew--}}
 
 
+
+            {{--            new--}}
+
+            <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">
+                <a href="{{ route('cvideo.index')}}" class="m-menu__link m-menu__toggle">
+                    <i class="m-menu__link-icon flaticon-layers"></i>
+                    <span class="m-menu__link-text">
+		Video
+	</span>
+                    <i class="m-menu__ver-arrow la la-angle-right"></i>
+                </a>
+                <div class="m-menu__submenu" style="">
+                    <span class="m-menu__arrow"></span>
+                    <ul class="m-menu__subnav">
+
+
+                        <li class="m-menu__item " aria-haspopup="true">
+                            <a href="{{ route('video.index')}}" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+											Danh Sách
+										</span>
+                            </a>
+                        </li>
+
+                        <li class="m-menu__item " aria-haspopup="true">
+                            <a href="{{ route('cvideo.index')}}" class="m-menu__link ">
+                                <i class="m-menu__link-bullet m-menu__link-bullet--dot">
+                                    <span></span>
+                                </i>
+                                <span class="m-menu__link-text">
+											Danh Mục
+										</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                </a>
+            </li>
+            {{--            endnew--}}
+
+
 			{{--            endevent--}}
 
             <li class="m-menu__item m-menu__item--submenu" aria-haspopup="true" data-menu-submenu-toggle="hover">

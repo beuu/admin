@@ -9,7 +9,7 @@
                           <div class="m-portlet__head-caption">
                                 <div class="m-portlet__head-title">
                                       <h3 class="m-portlet__head-text">
-                                            Sửa bài viết
+                                            Sửa Video
                                       </h3>
                                 </div>
                           </div>
@@ -36,12 +36,12 @@
 
 
                         <form class="form-horizontal" role="form" method="POST"
-                              action="{{ route('post.update',$data2->id) }}">
+                              action="{{ route('video.update',$data2->id) }}">
                             {{ csrf_field() }}
                             {{ method_field('PATCH') }}
 
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                                <label for="title" class="col-md-12 control-label">Tên bài viết</label>
+                                <label for="title" class="col-md-12 control-label">Tiêu đề</label>
 
                                 <div class="col-md-12">
                                     <input id="title" type="text" class="form-control" name="title" value="{{ $data2->title }}" onkeyup="ChangeToSlug()"
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="m-form__group form-group row">
-                                        <label class="col-3 col-form-label">Bài viết nổi bật</label>
+                                        <label class="col-3 col-form-label">Video nổi bật</label>
                                         <div class="col-3">
 											<span class="m-switch m-switch--success">
 												<label>
@@ -107,7 +107,7 @@
 
 
                             <div class="form-group{{ $errors->has('slug') ? ' has-error' : '' }}">
-                                <label for="slug" class="col-md-12 control-label">Slug bài viết</label>
+                                <label for="slug" class="col-md-12 control-label">Slug video</label>
 
                                 <div class="col-md-12">
                                     <input id="slug" type="text" class="form-control" name="slug" value="{{ $data2->slugs->slug }}"
@@ -127,27 +127,16 @@
                                   
                               </select>
                           </div>
-                            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-12 control-label">Mô tả ngắn</label>
+                            <div class="form-group{{ $errors->has('link') ? ' has-error' : '' }}">
+                                <label for="link" class="col-md-12 control-label">Link video</label>
 
                                 <div class="col-md-12">
-                                              <textarea id="description" rows="7" name="description" class="form-control">{{$data2->description}}</textarea>
-                                    @if ($errors->has('description'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('description') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
+                                    <input id="link" type="text" class="form-control" name="link" value="{{ $data2->link }}"
+                                           required autofocus>
 
-                            <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
-                                <label for="email" class="col-md-12 control-label">Mô tả </label>
-
-                                <div class="col-md-12">
-                                              <textarea id="content" rows="40" name="content" class="form-control my-editor">{{$data2->content}}</textarea>
-                                    @if ($errors->has('content'))
+                                    @if ($errors->has('link'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('content') }}</strong>
+                                        <strong>{{ $errors->first('link') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -191,7 +180,7 @@
                                         Sửa
                                     </button>
 
-                                    <a class="btn btn-link" href="{{ route('post.index') }}">
+                                    <a class="btn btn-link" href="{{ route('video.index') }}">
                                         Hủy
                                     </a>
                                 </div>

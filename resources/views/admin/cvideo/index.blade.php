@@ -16,7 +16,7 @@
                       <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
                                   <h3 class="m-portlet__head-text">
-                                        Bài Viết
+                                        Danh Mục
                                   </h3>
                             </div>
                       </div>
@@ -37,10 +37,10 @@
                                         
                                   </div>
                                   <div class="col-xl-4 order-1 order-xl-2 m--align-right">
-                                  <a href="{{ route('video.create') }}" class="btn btn-info m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
+                                  <a href="{{ route('cvideo.create') }}" class="btn btn-info m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
                                               <span>
                                                     <i class="la la-cart-plus"></i>
-                                                    <span>Tạo Mới video</span>
+                                                    <span>Tạo Mới Danh Mục</span>
                                               </span>
                                         </a>					
                                         <div class="m-separator m-separator--dashed d-xl-none"></div>					
@@ -56,7 +56,8 @@
                                               <thead>
                                                   <tr>
                                                       <th>No</th>
-                                                      <th>Tiêu đề video</th>
+                                                      <th>Tên Danh Mục</th>
+                                                      <th>Tên Danh Mục Cha</th>
                                                       <th width="100px">Action</th>
                                                   </tr>
                                               </thead>
@@ -80,10 +81,11 @@ $(document).ready(function(){
 var table = $('.data-table').DataTable({
     processing: true,
     serverSide: true,
-    ajax: "{{ route('video.index') }}",
+    ajax: "{{ route('cvideo.index') }}",
     columns: [
         {data: 'DT_RowIndex', name: 'DT_RowIndex'},
         {data: 'title', name: 'title'},
+        {data: 'parent', name: 'parent'},
         {data: 'action', name: 'action', orderable: false, searchable: false},
     ]
 });
@@ -97,7 +99,7 @@ $('body').on('click', '.deleteUser', function () {
     $.ajax({
      type: "POST",
      data: {_method: 'delete'},
-     url: route('video.destroy',{id: page_id}),
+     url: route('cvideo.destroy',{id: page_id}),
      success: function (data) {
          table.draw();
      },

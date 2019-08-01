@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2019 at 11:52 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Aug 01, 2019 at 01:05 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,7 +35,7 @@ CREATE TABLE `category_news` (
   `slug_id` bigint(20) UNSIGNED NOT NULL,
   `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `pid` bigint(20) NOT NULL DEFAULT 0,
+  `pid` bigint(20) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -51,6 +51,31 @@ INSERT INTO `category_news` (`id`, `title`, `image`, `slug_id`, `keywords`, `des
 (4, 'su kien', NULL, 16, NULL, NULL, 0, '2019-07-31 13:00:12', '2019-07-31 13:00:12'),
 (5, 'toi va ieg', NULL, 17, NULL, NULL, 0, '2019-07-31 13:00:32', '2019-07-31 13:00:32'),
 (6, 'tin tucdsf', NULL, 18, NULL, NULL, 0, '2019-07-31 13:03:37', '2019-07-31 13:03:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cate_videos`
+--
+
+CREATE TABLE `cate_videos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug_id` bigint(20) UNSIGNED NOT NULL,
+  `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `pid` bigint(20) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cate_videos`
+--
+
+INSERT INTO `cate_videos` (`id`, `title`, `image`, `slug_id`, `keywords`, `description`, `pid`, `created_at`, `updated_at`) VALUES
+(1, 'Đồ gỗ mỹ nghệ tinh xảo giá “khủng” tại chợ xuân phố núi sdasd', '/photos/2/wallpaper_op2.jpg', 27, NULL, NULL, 0, '2019-07-31 17:15:33', '2019-07-31 17:15:33');
 
 -- --------------------------------------------------------
 
@@ -93,7 +118,7 @@ CREATE TABLE `ieg_me_cates` (
   `slug_id` bigint(20) UNSIGNED NOT NULL,
   `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `pid` bigint(20) NOT NULL DEFAULT 0,
+  `pid` bigint(20) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -122,9 +147,9 @@ CREATE TABLE `ieg_me_posts` (
   `uid` bigint(20) UNSIGNED NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `feature` tinyint(1) NOT NULL DEFAULT 0,
-  `public` tinyint(1) NOT NULL DEFAULT 1,
-  `viewcount` int(11) NOT NULL DEFAULT 0,
+  `feature` tinyint(1) NOT NULL DEFAULT '0',
+  `public` tinyint(1) NOT NULL DEFAULT '1',
+  `viewcount` int(11) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -162,7 +187,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2019_07_31_203515_create_events_table', 4),
 (15, '2019_07_31_210427_create_ieg_me_cates_table', 5),
 (16, '2019_07_31_210546_create_ieg_me_posts_table', 5),
-(17, '2019_07_31_213025_create_pages_table', 6);
+(17, '2019_07_31_213025_create_pages_table', 6),
+(18, '2019_08_01_000517_create_cate_videos_table', 7),
+(19, '2019_08_31_214706_create_videos_table', 7);
 
 -- --------------------------------------------------------
 
@@ -181,9 +208,9 @@ CREATE TABLE `news` (
   `uid` bigint(20) UNSIGNED NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `feature` tinyint(1) NOT NULL DEFAULT 0,
-  `public` tinyint(1) NOT NULL DEFAULT 1,
-  `viewcount` int(11) NOT NULL DEFAULT 0,
+  `feature` tinyint(1) NOT NULL DEFAULT '0',
+  `public` tinyint(1) NOT NULL DEFAULT '1',
+  `viewcount` int(11) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -380,7 +407,9 @@ INSERT INTO `slugs` (`id`, `slug`, `type`, `created_at`, `updated_at`) VALUES
 (23, 'toi-va-iegdssdfsdfsdf', 'icate', '2019-07-31 14:15:51', '2019-07-31 14:15:51'),
 (24, 'toi-va-ieg-fsdfsdf-sdfdsf', 'new', '2019-07-31 14:28:25', '2019-07-31 14:28:25'),
 (25, 'su-kien-sdfsdfds', 'page', '2019-07-31 14:42:54', '2019-07-31 14:42:54'),
-(26, 'su-kien-sdfsdfds-sdfsdfsdfds', 'page', '2019-07-31 14:43:23', '2019-07-31 14:43:23');
+(26, 'su-kien-sdfsdfds-sdfsdfsdfds', 'page', '2019-07-31 14:43:23', '2019-07-31 14:43:23'),
+(27, 'do-go-my-nghe-tinh-xao-gia-“khung”-tai-cho-xuan-pho-nui-sdasd', 'cvideo', '2019-07-31 17:15:33', '2019-07-31 17:15:33'),
+(28, 'do-go-my-nghe-tinh-xao-gia-“khung”-tai-cho-xuan-pho-nui-sdasd-sdfsdfsdf', 'video', '2019-07-31 17:32:16', '2019-07-31 17:32:16');
 
 -- --------------------------------------------------------
 
@@ -406,6 +435,35 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'Admin User', 'tien2vv@gmail.com', NULL, '$2y$10$8ipDZJuzO5lKALO89e7JkebjEQ9/Hj/uzJ3kLH.NE9L53/VrRN0R.', NULL, '2019-07-28 10:04:49', '2019-07-28 10:04:49');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+CREATE TABLE `videos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug_id` bigint(20) UNSIGNED NOT NULL,
+  `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `mdescription` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `uid` bigint(20) UNSIGNED NOT NULL,
+  `cid` bigint(20) UNSIGNED DEFAULT NULL,
+  `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `feature` tinyint(1) NOT NULL DEFAULT '0',
+  `viewcount` int(11) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `title`, `image`, `slug_id`, `keywords`, `mdescription`, `uid`, `cid`, `link`, `feature`, `viewcount`, `created_at`, `updated_at`) VALUES
+(1, 'Đồ gỗ mỹ nghệ tinh xảo giá “khủng” tại chợ xuân phố núi sdasd sdfsdfsdf', '/photos/2/wallpaper_op2.jpg', 28, NULL, NULL, 2, 1, 'sdfsdf sdfsdf', 0, 0, '2019-07-31 17:32:16', '2019-07-31 17:32:35');
+
 --
 -- Indexes for dumped tables
 --
@@ -416,6 +474,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 ALTER TABLE `category_news`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_news_slug_id_foreign` (`slug_id`);
+
+--
+-- Indexes for table `cate_videos`
+--
+ALTER TABLE `cate_videos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cate_videos_slug_id_foreign` (`slug_id`);
 
 --
 -- Indexes for table `events`
@@ -513,6 +578,15 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `videos`
+--
+ALTER TABLE `videos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `videos_slug_id_foreign` (`slug_id`),
+  ADD KEY `videos_uid_foreign` (`uid`),
+  ADD KEY `videos_cid_foreign` (`cid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -521,6 +595,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `category_news`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `cate_videos`
+--
+ALTER TABLE `cate_videos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `events`
@@ -544,7 +624,7 @@ ALTER TABLE `ieg_me_posts`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -574,13 +654,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `slugs`
 --
 ALTER TABLE `slugs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `videos`
+--
+ALTER TABLE `videos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -591,6 +677,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `category_news`
   ADD CONSTRAINT `category_news_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `cate_videos`
+--
+ALTER TABLE `cate_videos`
+  ADD CONSTRAINT `cate_videos_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `events`
@@ -641,6 +733,14 @@ ALTER TABLE `permission_role`
 ALTER TABLE `role_user`
   ADD CONSTRAINT `role_user_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `role_user_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `videos`
+--
+ALTER TABLE `videos`
+  ADD CONSTRAINT `videos_cid_foreign` FOREIGN KEY (`cid`) REFERENCES `cate_videos` (`id`),
+  ADD CONSTRAINT `videos_slug_id_foreign` FOREIGN KEY (`slug_id`) REFERENCES `slugs` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `videos_uid_foreign` FOREIGN KEY (`uid`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

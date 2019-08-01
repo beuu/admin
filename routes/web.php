@@ -31,13 +31,14 @@ Route::group(['prefix' => 'quan-tri','middleware' => 'auth'], function() {
     //New
     Route::resource('ipost', 'Admin\IpostController');
     Route::resource('page', 'Admin\PageController');
+    Route::resource('cvideo', 'Admin\CateVideoController');
+    Route::resource('video', 'Admin\VideoController');
 });
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('homeieg');
 
 Auth::routes();
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/toi-va-ieg', 'IegController@toivaieg')->name('toivaieg');
+Route::get('/toi-va-ieg-bai-viet', 'IegController@toivaiegp')->name('toivaiegp');
