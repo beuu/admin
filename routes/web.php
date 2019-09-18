@@ -34,11 +34,32 @@ Route::group(['prefix' => 'quan-tri','middleware' => 'auth'], function() {
     Route::resource('cvideo', 'Admin\CateVideoController');
     Route::resource('video', 'Admin\VideoController');
 });
-Route::get('/', function () {
-    return view('home');
-})->name('homeieg');
+// Route::get('/', function () {
+//     return view('home');
+// })->name('homeieg');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cau-chuyen-ieg', 'IegController@cauchuyenieg')->name('cauchuyenieg');
+
+Route::get('/nguoi-giu-lua', 'IegController@nguoigiulua')->name('nguoigiulua');
+
+Route::get('/day-va-hoc', 'IegController@dayvahoc')->name('dayvahoc');
+Route::get('/tieng-anh', 'IegController@tienganh')->name('tienganh');
+
+Route::get('/toi-va-ieg', 'IegController@toivaieg')->name('toivaieg');
+
+Route::get('/goc-nhin-giao-duc', 'IegController@gocnhingd')->name('gocnhingd');
+
+Route::get('/tin-tuc', 'IegController@tintuc')->name('tintuc');
+Route::get('/tin-tuc-ct', 'IegController@tintucct')->name('tintucct');
+
+
+
+Route::get('/', 'IegController@homeieg')->name('homeieg');
 Route::get('/toi-va-ieg', 'IegController@toivaieg')->name('toivaieg');
 Route::get('/toi-va-ieg-bai-viet', 'IegController@toivaiegp')->name('toivaiegp');
+Route::get('/khoa-hoc', 'IegController@khoahoc')->name('khoahoc');
+Route::get('/tin-tuc', 'IegController@tintuc')->name('tintuc');
+Route::get('/toan-hoc', 'IegController@toanhoc')->name('toanhoc');

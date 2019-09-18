@@ -58,12 +58,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav nav_custContent">
-                    <li class="active"><a href="#">Câu chuyện IEG <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">IEG đồng hành</a></li>
-                <li><a href="{{ route('toivaieg')}}">Tôi và IEG</a></li>
-                    <li><a href="#">Góc nhìn chuyên gia</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tin tức <span class="caret"></span></a>
+                    <li class="active"><a href="{{route('cauchuyenieg')}}">Câu chuyện IEG <span class="sr-only">(current)</span></a></li>
+                    <li><a href="{{route('nguoigiulua')}}">Những người giữ lửa</a></li>
+                    <li><a href="{{route('dayvahoc')}}">Dạy và Học</a></li>
+                    <li><a href="{{ route('toivaieg')}}">Tôi và IEG</a></li>
+                    <li><a href="{{ route('gocnhingd')}}">Góc nhìn Giáo dục</a></li>
+                    <li><a href="{{ route('tintuc')}}">Tin tức</a></li>
+                    <!-- <li class="dropdown">
+                        <a href="{{ route('tintuc')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tin tức <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -75,16 +77,16 @@
                         </ul>
                     </li>
                     <li><a href="#">Nghề nghiệp</a></li>
-                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">Liên hệ</a></li> -->
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <!-- <ul class="nav navbar-nav navbar-right">
                     <li class="search_relative">
                         <a href="#" id="button_show"><span class="glyphicon glyphicon-search font16"></span></a>
                         <form id="item_hidden" class="search_main">
                             <input type="text" name="" placeholder="Tìm kiếm...">
                         </form>
                     </li>
-                </ul>
+                </ul> -->
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

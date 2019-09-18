@@ -14,31 +14,44 @@
 </div>
 
 <!--Khóa học-->
-<div class="container wpx920_width100vh">
-    <h1 class="title_block font36">CÁC KHOÁ HỌC TẠI IEG</h1>
-    <div class="row flex-box block_01">
-        <div class="col-2-cust text-center">
-            <img src="{{ asset('fe/image/iconinfo_01.png')}}">
-            <p class="info_KH">Tiếng Anh</p>
+<div class="container wpx920_width100vh" data-aos="fade-down" data-aos-duration="500">
+        <h1 class="title_block">Khóa học</h1>
+        <div class="row flex-box block_01">
+            <div class="col-2-cust text-center">
+                <a href="{{ route('toanhoc')}}">
+                <img src="{{ asset('fe/image/iconinfo_01.png') }}">
+                <p class="info_KH">Tiếng Anh</p>
+                </a>
+            </div>
+            <div class="col-2-cust text-center">
+            <a href="{{ route('toanhoc')}}">
+            <img src="{{ asset('fe/image/iconinfo_02.png') }}">
+                <p class="info_KH">Khoa Học</p>
+                </a>
+                
+            </div>
+            <div class="col-2-cust text-center">
+                <a href="{{ route('toanhoc')}}">
+                <img src="{{ asset('fe/image/iconinfo_03.png') }}">
+                <p class="info_KH">Toán Học</p>
+                </a>
+            </div>
+            <div class="col-2-cust text-center">
+            <a href="{{ route('toanhoc')}}">
+            <img src="{{ asset('fe/image/iconinfo_04.png') }}">
+                <p class="info_KH">Socrates</p>
+                </a>
+                
+            </div>
+            <div class="col-2-cust text-center">
+            <a href="{{ route('toanhoc')}}">
+            <img src="{{ asset('fe/image/iconinfo_05.png') }}">
+                <p class="info_KH">IELTS</p>
+                </a>
+                
+            </div>
         </div>
-        <div class="col-2-cust text-center">
-            <img src="{{ asset('fe/image/iconinfo_02.png')}}">
-            <p class="info_KH">Khoa Học</p>
-        </div>
-        <div class="col-2-cust text-center">
-            <img src="{{ asset('fe/image/iconinfo_03.png')}}">
-            <p class="info_KH">Toán Học</p>
-        </div>
-        <div class="col-2-cust text-center">
-            <img src="{{ asset('fe/image/iconinfo_04.png')}}">
-            <p class="info_KH">Socrates</p>
-        </div>
-        <div class="col-2-cust text-center">
-            <img src="{{ asset('fe/image/iconinfo_05.png')}}">
-            <p class="info_KH">IELTS</p>
-        </div>
-    </div>
-</div><!--/Khóa học_END-->
+    </div><!--/Khóa học_END-->
 
 <!--block_02-->
 <div class="container-fluid">
