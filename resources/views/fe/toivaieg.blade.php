@@ -20,80 +20,21 @@
 
 <!--Tôi và IEG-->
 <div class="toivaieg wpx1470 flex-box">
+
+    @foreach ($data as $item)
+        
+    @endforeach
     <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
+        <a class="block_display" href="{{ route('toivaiegc', $item->slugs->slug)}}">
+            <img src="{{ url('/').$item->image}}">
+            <p class="mt_20"><span>{{$item->created_at}}</span></p>
+            <p class="title_news font18">{{$item->title}}</p>
+            <p class="font18"><span>{{ $item->users->name}}</span></p>
         </a>
     </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
-    <div class="col-4-cust">
-        <a class="block_display" href="#">
-            <img src="image/img_02.jpg">
-            <p class="mt_20"><span>10/12/2019</span></p>
-            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-            <p class="font18"><span>Trần Hoài</span></p>
-        </a>
-    </div>
+
 </div><!--/Tôi và IEG_END-->
-<p><a class="btn_boxMore mb_150 mt_130" href="{{ route('toivaiegp')}}">Xem thêm...</a></p>
+<p><a class="mb_150 mt_130" >{!! $data->links()!!}</a></p>
 
 
 <!--Khóa học-->

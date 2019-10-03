@@ -1217,6 +1217,28 @@ ul.content_left--list.mt_130_cust >li >ul {
     margin-bottom: 50px;
 }
 
+header .navbar-default .navbar-nav > li > a:hover {
+    position: relative;
+}
+header .navbar-default .navbar-nav > li > a:hover:after, header .navbar-default .navbar-nav > li > a:hover:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 2px;
+    height: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+header .navbar-default .navbar-nav > li > a:hover:before {
+    top: -20px;
+    background: #66b969;
+}
+header .navbar-default .navbar-nav > li > a:hover:after {
+    bottom: -20px;
+    background: #199cc7;
+}
+
+
 header .navbar-default .navbar-nav > .active > a {
     position: relative;
 }
@@ -1237,9 +1259,6 @@ header .navbar-default .navbar-nav > .active > a:after {
     bottom: -20px;
     background: #199cc7;
 }
-
-
-
 
 
 
@@ -1340,3 +1359,18 @@ header .navbar-default .navbar-nav > .active > a:after {
     .line_after_heading_section:after{width:40%;}
     }
     }
+    @media (min-width: 1200px) {
+        .navbar-nav .caret {
+        display:none;
+       }
+      
+       .dropdown:hover .dropdown-menu {
+         display: block;
+        }
+      }
+      
+      .dropdown-menu > li > a{
+          line-height: 30px;
+          background: none;
+    color: #0f487e;
+      }

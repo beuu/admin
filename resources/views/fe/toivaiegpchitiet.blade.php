@@ -1,103 +1,65 @@
 @extends('layouts.fe')
 @section('content')
-<!--Banner-->
-<div class="container-fluid">
-    <div class="row">
-        <img src="{{ asset('fe/image/bg_pageSmall_1.png')}}">
-    </div>
-</div><!--Banner_END-->
-
-<div class="container text-center mt_40 mb_40">
-    <h1 class="title_block font36">tôi và IEG</h1>
-</div>
-
-<div class="content_baiviet wpx1470">
-    <div class="content_left wpx400">
-        <ul class="content_left--list">
-            <li class="active"><a href="#">Học viên</a></li>
-            <li><a href="#">Giáo viên</a></li>
-            <li><a href="#">Phụ huynh</a></li>
-            <li><a href="#">Người IEG</a></li>
-        </ul>
-        <ul class="content_left--list mt_130_cust mt_130">
-            <li class="active"><a>Bài viết tương tự</a></li>
-            <li>
-                <ul class="list-inline">
+	<!--Banner-->
+	<div class="container-fluid">
+            <div class="row">
+                <img src="{{ asset('fe/image/bg_pageSmall_1.png')}}">
+            </div>
+        </div><!--Banner_END-->
+    
+        <div class="container text-center mt_40 mb_40">
+            <h1 class="title_block font36">{{$data->title}}</h1>
+        </div>
+    
+        <div class="content_baiviet wpx1470">
+            <div class="content_left wpx400">
+                <ul class="content_left--list mt_130_cust ">
+                    <li class="active"><a>Bài viết tương tự</a></li>
+                    @foreach ($datas as $item)
                     <li>
-                        <a href="#">
-                            <img src="image/tintuc_1.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#">
-                            <img src="image/tintuc_2.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul class="list-inline">
-                    <li>
-                        <a href="#">
-                            <img src="image/tintuc_3.jpg">
-                        </a>
-                    </li>
-                    <li>
-                        <a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="content_right">
-        <div class="toivaIEG_baivietchitiet mb_100">
-            <span class="wimg100"><img src="image/tintuc_4.jpg"></span>
-            <p class="mt_40"><span class="time_news">19.08.2019</span></p>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <div class="col-md-12 mt_40">
-                <div class="row">
-                    <ul class="flex-box">
-                        <li>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <ul>
-                                <li class="text-right">
-                                    <a href="#">Creat</a>
+                            <ul class="list-inline">
+                                <li>
+                                    <a href="{{ route('toivaiegc', $item->slugs->slug)}}">
+                                        <img src="{{ url('/').$item->image}}">
+                                    </a>
                                 </li>
                                 <li>
-                                    <ul class="flex-box">
-                                        <li class="flext_list mr_25 pdr_40 text-right">
-                                            <h5 class="text-up font24 text-uppercase">Trần Hoài</h5>
-                                            <p class="font18">Lớp toán học 3 (2016)</p>
-                                        </li>
-                                        <li><a href="#"><img src="image/tintuc_5.jpg"></a></li>
-                                    </ul>
+                                    <a class="font18" href="{{ route('toivaiegc', $item->slugs->slug)}}">{{$item->title}}</a>
                                 </li>
                             </ul>
                         </li>
-                    </ul>
+                    @endforeach
+                    
+                </ul>
+            </div>
+            <div class="content_right">
+                <div class="toivaIEG_baivietchitiet mb_100">
+                    <span class="wimg100"><img src="{{ url('/').$data->image}}"></span>
+                    <p class="mt_40"><span class="time_news">{{$data->created_at}}</span></p>
+                            {!! $data->content!!}
+                    <div class="col-md-12 mt_40">
+                        <div class="row">
+                            <ul class="flex-box">
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Creat</a>
+                                        </li>
+                                        <li>
+                                            {{ $data->users->name}}
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 <!--Khóa học-->
 <div class="container wpx920_width100vh">
     <h1 class="title_block font36">CÁC KHOÁ HỌC TẠI IEG</h1>

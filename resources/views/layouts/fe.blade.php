@@ -39,6 +39,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('fe/css/responsive_page.css')}}">
+    @yield('css')
 </head>
 <body>
 <header>
@@ -58,12 +59,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav nav_custContent">
-                    <li class="active"><a href="{{route('cauchuyenieg')}}">Câu chuyện IEG <span class="sr-only">(current)</span></a></li>
-                    <li><a href="{{route('nguoigiulua')}}">Những người giữ lửa</a></li>
-                    <li><a href="{{route('dayvahoc')}}">Dạy và Học</a></li>
-                    <li><a href="{{ route('toivaieg')}}">Tôi và IEG</a></li>
-                    <li><a href="{{ route('gocnhingd')}}">Góc nhìn Giáo dục</a></li>
-                    <li><a href="{{ route('tintuc')}}">Tin tức</a></li>
+                    <li class="{{ request()->is('cau-chuyen-ieg*') ? 'active' : '' }}"><a href="{{route('cauchuyenieg')}}">Câu chuyện IEG <span class="sr-only">(current)</span></a></li>
+                    <li class="{{ request()->is('nguoi-giu-lua*') ? 'active' : '' }}"><a href="{{route('nguoigiulua')}}">Những người giữ lửa</a></li>
+                    <!-- <li class="{{ request()->is('day-va-hoc*') ? 'active' : '' }}"><a href="{{route('dayvahoc')}}">Dạy và Học</a></li> -->
+                    <li class="dropdown  {{ request()->is('day-va-hoc*') ? 'active' : '' }}">
+                        <a href="{{ route('dayvahoc')}}" class="dropdown-toggle disabled" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dạy và Học<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('toanhoc')}}">TOÁN HỌC</a></li>
+                            <li><a href="{{ route('toanhoc')}}">TIẾNG ANH</a></li>
+                            <li><a href="{{ route('toanhoc')}}">KHOA HỌC</a></li>
+                            <li><a href="{{ route('toanhoc')}}">SOCRATES</a></li>
+                            <li><a href="{{ route('toanhoc')}}">IELTS</a></li>
+                        </ul>
+                    </li>
+                    <li class="{{ request()->is('toi-va-ieg*') ? 'active' : '' }}"><a href="{{ route('toivaieg')}}">Tôi và IEG</a></li>
+                    <!-- <li><a href="{{ route('gocnhingd')}}">Góc nhìn Giáo dục</a></li> -->
+                    <li class="{{ request()->is('tin-tuc*') ? 'active' : '' }}"><a href="{{ route('tintuc')}}">Tin tức</a></li>
                     <!-- <li class="dropdown">
                         <a href="{{ route('tintuc')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tin tức <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -75,7 +86,8 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="#">One more separated link</a></li>
                         </ul>
-                    </li>
+                    </li> -->
+                    <!-- 
                     <li><a href="#">Nghề nghiệp</a></li>
                     <li><a href="#">Liên hệ</a></li> -->
                 </ul>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2019 at 01:05 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Oct 03, 2019 at 05:59 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,7 +35,7 @@ CREATE TABLE `category_news` (
   `slug_id` bigint(20) UNSIGNED NOT NULL,
   `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `pid` bigint(20) NOT NULL DEFAULT '0',
+  `pid` bigint(20) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -65,7 +65,7 @@ CREATE TABLE `cate_videos` (
   `slug_id` bigint(20) UNSIGNED NOT NULL,
   `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `pid` bigint(20) NOT NULL DEFAULT '0',
+  `pid` bigint(20) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -118,7 +118,7 @@ CREATE TABLE `ieg_me_cates` (
   `slug_id` bigint(20) UNSIGNED NOT NULL,
   `keywords` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT '',
-  `pid` bigint(20) NOT NULL DEFAULT '0',
+  `pid` bigint(20) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -147,9 +147,9 @@ CREATE TABLE `ieg_me_posts` (
   `uid` bigint(20) UNSIGNED NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `feature` tinyint(1) NOT NULL DEFAULT '0',
-  `public` tinyint(1) NOT NULL DEFAULT '1',
-  `viewcount` int(11) NOT NULL DEFAULT '0',
+  `feature` tinyint(1) NOT NULL DEFAULT 0,
+  `public` tinyint(1) NOT NULL DEFAULT 1,
+  `viewcount` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -208,9 +208,9 @@ CREATE TABLE `news` (
   `uid` bigint(20) UNSIGNED NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `feature` tinyint(1) NOT NULL DEFAULT '0',
-  `public` tinyint(1) NOT NULL DEFAULT '1',
-  `viewcount` int(11) NOT NULL DEFAULT '0',
+  `feature` tinyint(1) NOT NULL DEFAULT 0,
+  `public` tinyint(1) NOT NULL DEFAULT 1,
+  `viewcount` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -220,12 +220,12 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `image`, `slug_id`, `cid`, `keywords`, `mdescription`, `uid`, `description`, `content`, `feature`, `public`, `viewcount`, `created_at`, `updated_at`) VALUES
-(2, 'Highcharts Demo gfhfgh', '/photos/2/IMG_20190622_150250-01.jpeg', 10, 1, 'werewr', 'ewrwer', 2, '<p>fgh hfghfg</p>', '<p>fghfgh gfhfg</p>', 1, 1, 0, '2019-07-30 11:31:34', '2019-07-31 13:28:32'),
-(3, 'Highcharts Demo asdasd', '/photos/2/IMG_20190622_150250-01.jpeg', 11, 1, NULL, '', 2, '<p>asdasd</p>', '<p>dfsdfsdfsd</p>', 0, 1, 0, '2019-07-30 11:48:20', '2019-07-30 11:48:20'),
-(4, 'Thất vọngsdfsdfsdfsdf sdfdsf3123123', '/photos/2/IMG_20190622_150250-01.jpeg', 12, 1, NULL, '', 2, '<p>dfgdf</p>', '<p>dfgdfgdf dfgdfgdfg</p>', 0, 1, 0, '2019-07-30 11:49:03', '2019-07-30 11:49:03'),
-(5, 'Dễ đọc nhưng nội dung không hề dễ dãi sdfsdfsdf 345345', '/photos/2/IMG_20190622_150250-01.jpeg', 13, 1, 'asdas', 'asdasd', 2, 'sdas', '<p>asdsa</p>', 0, 1, 0, '2019-07-30 12:34:00', '2019-07-30 12:34:00'),
-(6, 'Dễ đọc nhưng nội dung không hề dễ dãi sdfsdfsdfSFSDFSDFSDF', '/photos/2/IMG_20190622_150250-01.jpeg', 14, 1, 'asdas', 'sdasd', 2, 'asdasdas asdsa', '<p>sad asdasdas asdasd</p>', 1, 1, 0, '2019-07-30 12:35:11', '2019-07-30 12:35:11'),
-(7, 'toi va ieg sdfsdfdsf', '/photos/2/IMG_20190622_150250-01.jpeg', 19, 1, NULL, NULL, 2, 'sdfsdfsdfsdf', '<p>sdfsdfdsf</p>', 0, 0, 0, '2019-07-31 13:05:46', '2019-07-31 14:45:04');
+(2, 'Highcharts Demo gfhfgh', '/photos/2/tintuc_6.jpg', 10, 1, 'werewr', 'ewrwer', 2, '<p>fgh hfghfg</p>', '<p>fghfgh gfhfg</p>', 1, 1, 0, '2019-07-30 11:31:34', '2019-10-02 12:21:04'),
+(3, 'Highcharts Demo asdasd', '/photos/2/tintuc_6.jpg', 11, 1, NULL, NULL, 2, '<p>asdasd</p>', '<p>dfsdfsdfsd</p>', 0, 1, 0, '2019-07-30 11:48:20', '2019-10-02 12:20:56'),
+(4, 'Thất vọngsdfsdfsdfsd', '/photos/2/tintuc_6.jpg', 12, 1, NULL, NULL, 2, '<p>dfgdf</p>', '<p>dfgdfgdf dfgdfgdfg</p>', 0, 1, 0, '2019-07-30 11:49:03', '2019-10-02 12:20:48'),
+(5, 'Dễ đọc nhưng nội dung', '/photos/2/tintuc_6.jpg', 13, 1, 'asdas', 'asdasd', 2, 'sdas', '<p>asdsa</p>', 0, 1, 0, '2019-07-30 12:34:00', '2019-10-02 12:20:38'),
+(6, 'Dễ đọc nhưng nội', '/photos/2/tintuc_6.jpg', 14, 1, 'asdas', 'sdasd', 2, 'asdasdas asdsa', '<p>sad asdasdas asdasd</p>', 1, 1, 0, '2019-07-30 12:35:11', '2019-10-02 12:20:30'),
+(7, 'toi va ieg sdfsdfdsf', '/photos/2/tintuc_6.jpg', 19, 1, NULL, NULL, 2, 'sdfsdfsdfsdf', '<p>sdfsdfdsf</p>', 0, 0, 0, '2019-07-31 13:05:46', '2019-10-02 12:20:05');
 
 -- --------------------------------------------------------
 
@@ -394,9 +394,9 @@ INSERT INTO `slugs` (`id`, `slug`, `type`, `created_at`, `updated_at`) VALUES
 (7, 'that-vong', 'new', '2019-07-30 11:21:30', '2019-07-30 11:21:30'),
 (10, 'highcharts-demo-gfhfgh', 'new', '2019-07-30 11:31:34', '2019-07-30 11:31:34'),
 (11, 'highcharts-demo-asdasd', 'new', '2019-07-30 11:48:20', '2019-07-30 11:48:20'),
-(12, 'that-vongsdfsdfsdfsdf-sdfdsf3123123', 'new', '2019-07-30 11:49:03', '2019-07-30 11:49:03'),
-(13, 'de-doc-nhung-noi-dung-khong-he-de-dai-sdfsdfsdf-345345', 'new', '2019-07-30 12:34:00', '2019-07-30 12:34:00'),
-(14, 'de-doc-nhung-noi-dung-khong-he-de-dai-sdfsdfsdfsfsdfsdfsdf', 'new', '2019-07-30 12:35:11', '2019-07-30 12:35:11'),
+(12, 'that-vongsdfsdfsdfsd', 'new', '2019-07-30 11:49:03', '2019-10-02 11:55:45'),
+(13, 'de-doc-nhung-noi-dung', 'new', '2019-07-30 12:34:00', '2019-10-02 11:54:55'),
+(14, 'de-doc-nhung-noi', 'new', '2019-07-30 12:35:11', '2019-10-02 11:55:10'),
 (15, 'tin-tuc', 'postcate', '2019-07-31 12:59:51', '2019-07-31 12:59:51'),
 (16, 'su-kien', 'postcate', '2019-07-31 13:00:12', '2019-07-31 13:00:12'),
 (17, 'toi-va-ieg', 'postcate', '2019-07-31 13:00:32', '2019-07-31 13:00:32'),
@@ -451,8 +451,8 @@ CREATE TABLE `videos` (
   `uid` bigint(20) UNSIGNED NOT NULL,
   `cid` bigint(20) UNSIGNED DEFAULT NULL,
   `link` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `feature` tinyint(1) NOT NULL DEFAULT '0',
-  `viewcount` int(11) NOT NULL DEFAULT '0',
+  `feature` tinyint(1) NOT NULL DEFAULT 0,
+  `viewcount` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -462,7 +462,7 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `title`, `image`, `slug_id`, `keywords`, `mdescription`, `uid`, `cid`, `link`, `feature`, `viewcount`, `created_at`, `updated_at`) VALUES
-(1, 'Đồ gỗ mỹ nghệ tinh xảo giá “khủng” tại chợ xuân phố núi sdasd sdfsdfsdf', '/photos/2/wallpaper_op2.jpg', 28, NULL, NULL, 2, 1, 'sdfsdf sdfsdf', 0, 0, '2019-07-31 17:32:16', '2019-07-31 17:32:35');
+(1, 'Đồ gỗ mỹ nghệ tinh xảo giá “khủng” tại chợ xuân phố núi sdasd sdfsdfsdf', '/photos/2/wallpaper_op2.jpg', 28, NULL, NULL, 2, 1, 'https://www.youtube.com/watch?v=UBv-GcD3jHE', 1, 0, '2019-07-31 17:32:16', '2019-10-02 20:35:28');
 
 --
 -- Indexes for dumped tables

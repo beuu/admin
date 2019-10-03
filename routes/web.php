@@ -46,14 +46,18 @@ Route::get('/cau-chuyen-ieg', 'IegController@cauchuyenieg')->name('cauchuyenieg'
 Route::get('/nguoi-giu-lua', 'IegController@nguoigiulua')->name('nguoigiulua');
 
 Route::get('/day-va-hoc', 'IegController@dayvahoc')->name('dayvahoc');
-Route::get('/tieng-anh', 'IegController@tienganh')->name('tienganh');
+Route::group(['prefix' => 'day-va-hoc'], function() {
+    Route::get('/tieng-anh', 'IegController@tienganh')->name('tienganh');
+    Route::get('/toan-hoc', 'IegController@toanhoc')->name('toanhoc');
+});
+
 
 Route::get('/toi-va-ieg', 'IegController@toivaieg')->name('toivaieg');
-
+Route::get('/toi-va-ieg/{slug}', 'IegController@toivaiegc')->name('toivaiegc');
 Route::get('/goc-nhin-giao-duc', 'IegController@gocnhingd')->name('gocnhingd');
 
 Route::get('/tin-tuc', 'IegController@tintuc')->name('tintuc');
-Route::get('/tin-tuc-ct', 'IegController@tintucct')->name('tintucct');
+Route::get('/tin-tuc/{slug}', 'IegController@tintucct')->name('tintucct');
 
 
 
@@ -62,4 +66,5 @@ Route::get('/toi-va-ieg', 'IegController@toivaieg')->name('toivaieg');
 Route::get('/toi-va-ieg-bai-viet', 'IegController@toivaiegp')->name('toivaiegp');
 Route::get('/khoa-hoc', 'IegController@khoahoc')->name('khoahoc');
 Route::get('/tin-tuc', 'IegController@tintuc')->name('tintuc');
-Route::get('/toan-hoc', 'IegController@toanhoc')->name('toanhoc');
+Route::get('/ieg-tv', 'IegController@video')->name('video');
+

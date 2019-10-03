@@ -3,12 +3,12 @@
 <!--Banner-->
 <div class="container-fluid">
 		<div class="row">
-			<img src="image/bg_pageSmall.png">
+			<img src="{{asset('fe/image/bg_pageSmall.png')}}">
 		</div>
 	</div><!--Banner_END-->
 
 	<div class="container text-center mt_40 mb_40">
-		<img src="image/iconinfo_03.png">
+		<img src="{{asset('fe/image/iconinfo_03.png')}}">
 	</div>
 
 	<!--qoutes-->
@@ -22,7 +22,7 @@
 	<div class="wpx1470 wdthIMG">
 		<div class="row search_relative">
 			<div class="col-md-8 col-sm-8 col-xs-12 oject_img">
-				<img src="image/toanhoc_01.jpg">
+				<img src="{{asset('fe/image/toanhoc_01.jpg')}}">
 			</div>
 			<div class="col-md-5--cust">
 				<h2 class="title_h2">Tất cả khởi nguồn từ một triết lý...</h2>
@@ -38,10 +38,10 @@
 		<h1 class="title_block font36 mt_80 mb_80">Điều gì làm nên sự khác biệt tại IEG</h1>
 		<div class="row search_relative">
 			<div class="col-md-8 col-sm-8 col-xs-12 oject_img pull-right">
-				<img src="image/toanhoc_02.jpg">
+				<img src="{{asset('fe/image/toanhoc_02.jpg')}}">
 			</div>
 			<div class="col-md-5--cust absoluteLeft_0">
-				<h2 class="title_h2"><img src="image/ico_01.png" />Đề cập <br/> có hệ thống</h2>
+				<h2 class="title_h2"><img src="{{asset('fe/image/ico_01.png')}}" />Đề cập <br/> có hệ thống</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
 				</p>
@@ -49,10 +49,10 @@
 		</div>
 		<div class="row search_relative mt_160">
 			<div class="col-md-8 col-sm-8 col-xs-12 oject_img">
-				<img src="image/toanhoc_03.jpg">
+				<img src="{{asset('fe/image/toanhoc_03.jpg')}}">
 			</div>
 			<div class="col-md-5--cust">
-				<h2 class="title_h2"><img src="image/ico_02.png" />kích thích <br/> tính sáng tạo</h2>
+				<h2 class="title_h2"><img src="{{asset('fe/image/ico_02.png')}}" />kích thích <br/> tính sáng tạo</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
 				</p>
@@ -60,10 +60,10 @@
 		</div>
 		<div class="row search_relative mt_160 mb_100">
 			<div class="col-md-8 col-sm-8 col-xs-12 oject_img pull-right">
-				<img src="image/toanhoc_04.jpg">
+				<img src="{{asset('fe/image/toanhoc_04.jpg')}}">
 			</div>
 			<div class="col-md-5--cust absoluteLeft_0">
-				<h2 class="title_h2"><img src="image/ico_03.png" />phát triển <br/> tư duy</h2>
+				<h2 class="title_h2"><img src="{{asset('fe/image/ico_03.png')}}" />phát triển <br/> tư duy</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
 				</p>
@@ -137,19 +137,19 @@
 		<h1 class="title_block font36">CÁC KHOÁ HỌC TẠI IEG</h1>
 		<div class="row flex-box block_01">
 			<div class="col-2-cust text-center">
-				<img src="image/iconinfo_01.png">
+				<img src="{{asset('fe/image/iconinfo_01.png')}}">
 				<p class="info_KH">Tiếng Anh</p>
 			</div>
 			<div class="col-2-cust text-center">
-				<img src="image/iconinfo_02.png">
+				<img src="{{asset('fe/image/iconinfo_02.png')}}">
 				<p class="info_KH">Khoa Học</p>
 			</div>
 			<div class="col-2-cust text-center">
-				<img src="image/iconinfo_04.png">
+				<img src="{{asset('fe/image/iconinfo_04.png')}}">
 				<p class="info_KH">Socrates</p>
 			</div>
 			<div class="col-2-cust text-center">
-				<img src="image/iconinfo_05.png">
+				<img src="{{asset('fe/image/iconinfo_05.png')}}">
 				<p class="info_KH">IELTS</p>
 			</div>
 		</div>
@@ -162,12 +162,12 @@
 			<div class="wpx1470">
 				<div class="wpx1200">
 					<div class="owl-carousel owl-theme slider_doitac cust_btn_nextPrev">
-					    <div class="item"><img src="image/logo_dt_01.png"></div>
-					    <div class="item"><img src="image/logo_dt_02.png"></div>
-					    <div class="item"><img src="image/logo_dt_01.png"></div>
-					    <div class="item"><img src="image/logo_dt_02.png"></div>
-					    <div class="item"><img src="image/logo_dt_01.png"></div>
-					    <div class="item"><img src="image/logo_dt_02.png"></div>
+					    <div class="item"><img src="{{asset('fe/image/logo_dt_01.png')}}"></div>
+					    <div class="item"><img src="{{asset('fe/image/logo_dt_02.png')}}"></div>
+					    <div class="item"><img src="{{asset('fe/image/logo_dt_01.png')}}"></div>
+					    <div class="item"><img src="{{asset('fe/image/logo_dt_02.png')}}"></div>
+					    <div class="item"><img src="{{asset('fe/image/logo_dt_01.png')}}"></div>
+					    <div class="item"><img src="{{asset('fe/image/logo_dt_02.png')}}"></div>
 					</div>
 				</div>
 			</div>

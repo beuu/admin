@@ -20,86 +20,37 @@
 		<div class="content_left wpx400">
 			<ul class="content_left--list mt_130_cust">
 				<li class="active"><a>Tin tức mới</a></li>
+				@foreach ($data as $item)
 				<li>
 					<ul class="list-inline">
 						<li>
-							<a href="#">
-								<img src="image/tintuc_1.jpg">
+							<a href="{{ route('tintucct', $item->slugs->slug)}}">
+								<img src="{{ url('/').$item->image}}">
 							</a>
 						</li>
 						<li>
-							<a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
+							<a class="font18" href="{{ route('tintucct', $item->slugs->slug)}}">{{$item->title}}</a>
 						</li>
 					</ul>
 				</li>
-				<li>
-					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<img src="image/tintuc_2.jpg">
-							</a>
-						</li>
-						<li>
-							<a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<img src="image/tintuc_3.jpg">
-							</a>
-						</li>
-						<li>
-							<a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<img src="image/tintuc_1.jpg">
-							</a>
-						</li>
-						<li>
-							<a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<img src="image/tintuc_2.jpg">
-							</a>
-						</li>
-						<li>
-							<a class="font18" href="#">Lorem Ipsum is simply dummy text </a>
-						</li>
-					</ul>
-				</li>
+				@endforeach
+				
 			</ul>
 		</div>
 		<div class="content_right">
 			<div class="toivaIEG_baivietchitiet mb_100">
 				<span class="wimg100"><img src="image/tintuc_4.jpg"></span>
 				<ul class="flex-box box_listCust">
+					@foreach ($dataf as $item)
 					<li class="bg_li bg_xam">
-						<a href="#">
-							<img src="image/tintuc_6.jpg">
-							<p class="time_news mt_30 pd_10">30.8.2019</p>
-							<p class="font30 pd_10">Lorem Ipsum is simply dummy text </p>
-						</a>
-					</li>
-					<li class="bg_li bg_xam">
-						<a href="#">
-							<img src="image/tintuc_6.jpg">
-							<p class="time_news mt_30 pd_10">30.8.2019</p>
-							<p class="font30 pd_10">Lorem Ipsum is simply dummy text </p>
-						</a>
-					</li>
+					<a href="{{ route('tintucct', $item->slugs->slug)}}">
+								<img src="{{ url('/').$item->image}}">
+								<p class="time_news mt_30 pd_10">{{$item->created_at}}</p>
+								<p class="font30 pd_10">{{$item->title}}</p>
+							</a>
+						</li>
+					@endforeach
+					
 				</ul>
 			</div>
 		</div>
@@ -113,11 +64,11 @@
 	<div class="container-fluid bg_xam pdt_100">
 		<div class="row">
 			<div class="container text-center">
-				<a href="#">
+				<a href="{{ route('video')}}">
 					<img src="image/tintuc_8.jpg">
 				</a>
 				<p>
-					<a href="#" class="btn_moreCust bg_vang font18">Xem thêm...</a>
+				<a href="{{ route('video')}}" class="btn_moreCust bg_vang font18">Xem thêm...</a>
 				</p>
 			</div>
 		</div>

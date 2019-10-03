@@ -121,4 +121,21 @@ $( "#button_show" ).click(function() {
 $( "#item_hidden" ).toggle();
 });
 
+// $(".nav_custContent").hover(function() {
+// 	$(this).addClass("active");
+// }, function() {
+// 	$(this).removeClass("active");
+// });	
+
+// $('.nav_custContent').on('mouseover', '> li', function(e) {
+//     $(this).addClass("active");
+// }).on('mouseout', '> li', function (e) {
+//     $(this).removeClass("active");
+// });
+
+$('ul.nav li.dropdown').hover(function() {
+	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+  }, function() {
+	$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+  });
 
