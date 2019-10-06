@@ -60,7 +60,7 @@
 		</div>
 		<div class="row search_relative mt_160 mb_100">
 			<div class="col-md-8 col-sm-8 col-xs-12 oject_img pull-right">
-				<img src="{{asset('fe/image/toanhoc_04.jpg">
+				<img src="{{asset('fe/image/toanhoc_04.jpg')}}">
 			</div>
 			<div class="col-md-5--cust absoluteLeft_0">
 				<h2 class="title_h2"><img src="{{asset('fe/image/ico_03.png')}}" />phát triển <br/> tư duy</h2>

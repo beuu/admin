@@ -39,13 +39,18 @@
 		</div>
 		<div class="content_right">
 			<div class="toivaIEG_baivietchitiet mb_100">
-				<span class="wimg100"><img src="image/tintuc_4.jpg"></span>
+				<div class="newrela">
+						<span class="wimg100"><img src="{{url('/').$allspl->image}}"></span>
+						<div class="news--text">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industr</p>
+						</div>
+				</div>
 				<ul class="flex-box box_listCust">
 					@foreach ($dataf as $item)
 					<li class="bg_li bg_xam">
 					<a href="{{ route('tintucct', $item->slugs->slug)}}">
 								<img src="{{ url('/').$item->image}}">
-								<p class="time_news mt_30 pd_10">{{$item->created_at}}</p>
+								<p class="time_news mt_30 pd_10">{{date('d/m/Y', strtotime($item->created_at))}}</p>
 								<p class="font30 pd_10">{{$item->title}}</p>
 							</a>
 						</li>

@@ -44,10 +44,11 @@ class IegController extends Controller
     }
 
     public function tintuc(){
-        $dataf = News::where('feature',1)->orderBy('id', 'desc')->take(2)->get();
+        $dataf = News::where('feature',1)->orderBy('id', 'desc')->take(3)->get();
+        $allspl = $dataf->shift();
         $data = News::select()->orderBy('id', 'desc')
         ->take(5)->get();
-        return view('fe.tintuc',compact(['dataf','data']));
+        return view('fe.tintuc',compact(['dataf','data', 'allspl']));
     }
     public function tintucct($slug){
         $dataslug = Slug::where('slug',$slug)->first();

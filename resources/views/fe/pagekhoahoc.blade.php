@@ -89,7 +89,64 @@
 			</div>
 		</div>
 	</div><!--/Lộ trình học_END-->
-
+	<h1 class="title_block">Cảm nghĩ</h1>
+	<div class="row">
+		<div class="wpx1470 block_03">
+			<div class="owl-carousel owl-theme sliderInfo cust_btn_nextPrev">
+				<div class="item">
+					<a href="">
+						<img src="{{ asset('fe/image/img_01.jpg') }}">
+						<div class="sliderInfo--text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</div>
+					</a>
+					<h5 class="h5--sliderInfo--text">Nguyễn Văn A</h5>
+					<p class="p--sliderInfo--text">Lớp Toán Học - Giải thưởng Olypic Toán 2019</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img src="{{ asset('fe/image/img_02.jpg') }}">
+						<div class="sliderInfo--text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</div>
+					</a>
+					<h5 class="h5--sliderInfo--text">Nguyễn Văn A</h5>
+					<p class="p--sliderInfo--text">Lớp Toán Học - Giải thưởng Olypic Toán 2019</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img src="{{ asset('fe/image/img_03.jpg') }}">
+						<div class="sliderInfo--text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</div>
+					</a>
+					<h5 class="h5--sliderInfo--text">Nguyễn Văn A</h5>
+					<p class="p--sliderInfo--text">Lớp Toán Học - Giải thưởng Olypic Toán 2019</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img src="{{ asset('fe/image/img_02.jpg') }}">
+						<div class="sliderInfo--text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</div>
+					</a>
+					<h5 class="h5--sliderInfo--text">Nguyễn Văn A</h5>
+					<p class="p--sliderInfo--text">Lớp Toán Học - Giải thưởng Olypic Toán 2019</p>
+				</div>
+				<div class="item">
+					<a href="">
+						<img src="{{ asset('fe/image/img_01.jpg') }}">
+						<div class="sliderInfo--text">
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+						</div>
+					</a>
+					<h5 class="h5--sliderInfo--text">Nguyễn Văn A</h5>
+					<p class="p--sliderInfo--text">Lớp Toán Học - Giải thưởng Olypic Toán 2019</p>
+				</div>
+			</div>
+			<p><a class="btn_boxMore" href="#">Xem thêm...</a></p>
+		</div>
+	</div>
 	<!--block_04-->
 	<div class="container wpx920_width100vh">
 		<div class="row">

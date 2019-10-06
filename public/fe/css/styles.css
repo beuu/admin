@@ -346,13 +346,13 @@ img {
     transform: translateY(-50%);
     background: #66b969;
     z-index: 1;
-    border-radius: 10px 0 0 0;
+    border-radius: 10px 0 0 10px;
 }
 .plugin_ico li {
     display: block;
     position: relative;
-    width: 60px;
-    height: 80px;
+    width: 50px;
+    height: 60px;
     text-align: center;
 }
 .plugin_ico li::after {
@@ -653,6 +653,23 @@ header .navbar-nav > li > a.btn_login:hover {
     color: #fff;
     background: linear-gradient(0deg, rgba(102,185,105,1) 40%, rgba(102,185,105,0) 100%);
     display: none;
+}
+.newrela{
+    position: relative;
+}
+.news--text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 24pt;
+    padding: 50px 30px;
+    font-weight: 600;
+    background: red;
+    background: rgb(246,211,101);
+    color: #000001;
+    background: linear-gradient(0deg, rgba(246,211,101) 40%, rgba(102,185,105,0) 100%);
+    /* display: none; */
 }
 .p--sliderInfo--text, .h5--sliderInfo--text {
     font-size: 18px;
