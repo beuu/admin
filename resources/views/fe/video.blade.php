@@ -23,25 +23,11 @@
         <div class="tinnoibat wpx1470">
             <h2 class="title_tintuc font24">Nổi bật</h2>
             <div class="toivaieg flex-box">
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                            <video
-                            id="vid1"
-                            class="video-js vjs-default-skin vjs-big-play-centered"
-                            width="" height="264"
-                            controls
-                            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=cNZnYNPceY0"}] }'
-                          >
-                          </video>
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
                 @foreach ($data as $item)
                 <div class="col-4-cust">
-                        <a class="block_display" href="#">
+                        <div class="block_display">
                                 <video
-                                id="{{$item->id}}"
+                                id="{{mt_srand(10)}}"
                                 class="video-js vjs-default-skin vjs-big-play-centered"
                                 width="" height="264"
                                 controls
@@ -49,135 +35,34 @@
                               >
                               </video>
                               
-                            <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                            <p class="mt_20"><span>10/12/2019</span></p>
-                        </a>
+                            <p class="title_news font18">{{ $item->title}}</p>
+                            <p class="mt_20"><span>{{ $item->created_at}}</span></p>
+                            </div>
                     </div>
                 @endforeach
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
+                
             </div><!--/Tôi và IEG_END-->
         </div>
         <div class="tinnoibat wpx1470">
             <h2 class="title_tintuc font24 mt_100">Phổ biến</h2>
             <div class="toivaieg flex-box">
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
-                <div class="col-4-cust">
-                    <a class="block_display" href="#">
-                        <img src="image/img_02.jpg">
-                        <p class="title_news font18">Tin tức trong ngày 1 2 3 4 5</p>
-                        <p class="mt_20"><span>10/12/2019</span></p>
-                    </a>
-                </div>
+                    @foreach ($datan as $item)
+                    <div class="col-4-cust">
+                            <div class="block_display">
+                                    <video
+                                    id="{{mt_srand(10)}}"
+                                    class="video-js vjs-default-skin vjs-big-play-centered"
+                                    width="" height="264"
+                                    controls
+                                    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "{{ $item->link }}"}] }'
+                                  >
+                                  </video>
+                                  
+                                <p class="title_news font18">{{ $item->title}}</p>
+                                <p class="mt_20"><span>{{ $item->created_at}}</span></p>
+                                </div>
+                        </div>
+                    @endforeach
             </div><!--/Tôi và IEG_END-->
         </div>
     

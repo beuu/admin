@@ -24,10 +24,10 @@
 	<!--Đặc điểm khóa học-->
 	<div class="wpx1470 wdthIMG dacdiemKH">
 		<div class="row search_relative mt_160">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img">
 				<img src="image/imgsumenh.png">
 			</div>
-			<div class="col-md-5--cust">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust">
 				<h2 class="title_h2"><img src="image/sumenh.png" />Sứ mệnh</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
@@ -35,10 +35,10 @@
 			</div>
 		</div>
 		<div class="row search_relative mt_160 mb_100">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img pull-right">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img pull-right">
 				<img src="image/imgtamnhin.png">
 			</div>
-			<div class="col-md-5--cust absoluteLeft_0">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust absoluteLeft_0">
 				<h2 class="title_h2"><img src="image/tamnhin.png" />Tầm nhìn</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
@@ -46,10 +46,10 @@
 			</div>
 		</div>
 		<div class="row search_relative mt_160">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img">
 				<img src="image/imggiatri.png">
 			</div>
-			<div class="col-md-5--cust">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust">
 				<h2 class="title_h2"><img src="image/giatri.png" />giá trị</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
