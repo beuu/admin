@@ -173,18 +173,38 @@
                 </li>
             </ul>
         </div>
+        <aside class="side-tool">
+            <ul class="plugin_ico list-unstyled">
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"><i class="far fa-envelope"></i></a></li>
+                <li><a href="#"><i class="fas fa-phone-volume"></i></a></li>
+            </ul>
+            <div class="side-tool__sign-up">
+                <form action="#" method="post" id="formNewsletter2" target="_top" onsubmit="return false">
+                    <div class="side-tool__sign-up__expand-btn"> <i class="far fa-edit"></i>
+                        <p>Đăng ký
+                            <br>ngay</p>
+                    </div>
+                    <div class="side-tool__sign-up__form">
+                        <input type="text" name="fullname" placeholder="Họ tên">
+                        <input type="tel" name="phone" placeholder="Số điện thoại">
+                        <input type="email" name="email" placeholder="Emal">
+                    </div>
+                    <div class="side-tool__sign-up__submit">
+                        <button type="submit" class="btn-form-register"> <i class="far fa-paper-plane"></i>
+                            <br>Gửi </button>
+                    </div>
+                </form>
+            </div>
+        </aside>
     </div>
     <div class="container footerCust_bot">
         <span class="colorMain">© 2019 IEG</span>
         <span class="colorMain pull-right">Học viện phát triển Tư duy và Kỹ năng IEG</span>
     </div>
 </footer>
-<ul class="plugin_ico list-unstyled">
-    <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-    <li><a href="#"><i class="far fa-envelope"></i></a></li>
-    <li><a href="#"><i class="fas fa-phone-volume"></i></a></li>
-</ul>
+
 <script src="{{asset('fe/js/main.js')}}"></script>
 <script src="{{asset('fe/js/aos.js')}}"></script>
 <script>
