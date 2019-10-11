@@ -77,7 +77,9 @@ class IegController extends Controller
     }
 
     public function video(){
-        $data = Video::all();
-        return view('fe.video',compact(['data']));
+        $data = Video::where('feature',1)->orderBy('id', 'desc')->take(6)->get();
+        $datan = Video::select()->orderBy('id', 'desc')
+        ->take(6)->get();
+        return view('fe.video',compact(['data','datan']));
     }
 }

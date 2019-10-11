@@ -21,10 +21,10 @@
 	<!--Mục đích-->
 	<div class="wpx1470 wdthIMG">
 		<div class="row search_relative">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img">
 				<img src="{{asset('fe/image/toanhoc_01.jpg')}}">
 			</div>
-			<div class="col-md-5--cust">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust">
 				<h2 class="title_h2">Tất cả khởi nguồn từ một triết lý...</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
@@ -37,10 +37,10 @@
 	<div class="wpx1470 wdthIMG dacdiemKH">
 		<h1 class="title_block font36 mt_80 mb_80">Điều gì làm nên sự khác biệt tại IEG</h1>
 		<div class="row search_relative">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img pull-right">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img pull-right">
 				<img src="{{asset('fe/image/toanhoc_02.jpg')}}">
 			</div>
-			<div class="col-md-5--cust absoluteLeft_0">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust absoluteLeft_0">
 				<h2 class="title_h2"><img src="{{asset('fe/image/ico_01.png')}}" />Đề cập <br/> có hệ thống</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
@@ -48,10 +48,10 @@
 			</div>
 		</div>
 		<div class="row search_relative mt_160">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img">
 				<img src="{{asset('fe/image/toanhoc_03.jpg')}}">
 			</div>
-			<div class="col-md-5--cust">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust">
 				<h2 class="title_h2"><img src="{{asset('fe/image/ico_02.png')}}" />kích thích <br/> tính sáng tạo</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
@@ -59,10 +59,10 @@
 			</div>
 		</div>
 		<div class="row search_relative mt_160 mb_100">
-			<div class="col-md-8 col-sm-8 col-xs-12 oject_img pull-right">
+			<div class="col-md-7 col-sm-7 col-xs-12 oject_img pull-right">
 				<img src="{{asset('fe/image/toanhoc_04.jpg')}}">
 			</div>
-			<div class="col-md-5--cust absoluteLeft_0">
+			<div class="col-md-5 col-sm-5 col-xs-12 col-md-5--cust absoluteLeft_0">
 				<h2 class="title_h2"><img src="{{asset('fe/image/ico_03.png')}}" />phát triển <br/> tư duy</h2>
 				<p class="font18">
 					Tùy nội dung của mỗi buổi học và tùy trình độ, học sinh sẽ được thử sức với các dạng trò chơi và độ khó khác nhau. Đây là cách vừa kích thích trí thông minh của các em, vừa kích thích niềm đam mê Toán học và đặc biệt để việc học không còn là gánh nặng mà là niềm vui cho mỗi ngày đến lớp
